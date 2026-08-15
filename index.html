@@ -24,12 +24,13 @@
     <!-- Header Semantico: Identifica l'intestazione superiore del sito.
      La classe class="header" servirà come aggancio CSS per posizionarlo fisicamente in alto a schermo (fixed/sticky) -->
     <header class="header">
-        
         <!-- Contenitore di layout: limita la larghezza massima del contenuto su schermi ultrawide -->
         <div class="container nav-container">
             
             <!-- Link Brand/Logo: href="#" riposiziona la pagina in cima al click -->
-            <a href="#" class="logo">Studio PESCA</a>
+            <a href="#" class="logo-text">
+            Studio <span class="p-teal">P</span><span class="e-green">E</span><span class="s-yellow">S</span><span class="c-purple">C</span><span class="a-blue">A</span>
+            </a>
             
             <!-- Navigazione Semantica: menu principale del sito -->
             <nav class="nav-menu">
@@ -51,6 +52,12 @@
         <section class="hero">
             <div class="container hero-content">
                 
+                <!-- Logo Vettoriale/Grafico principale -->
+                <!-- Nota: Assicurati di salvare l'immagine del logo nella cartella assets/ -->
+                <div class="hero-logo-wrapper">
+                    <img src="assets/logo.png" alt="Logo Studio PESCA - Percorsi verso la comunicazione, socialità e autonomia" class="hero-logo">
+                </div>
+
                 <!-- Titolo H1: unico per pagina, nodo fondamentale per l'indicizzazione SEO -->
                 <h1>Dott.ssa Nadia Bandera</h1>
                 

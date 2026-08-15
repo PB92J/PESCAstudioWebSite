@@ -1,0 +1,245 @@
+/* ==========================================================================
+   1. INCLUSIONE LIBRERIE TIPOGRAFICHE ESTERNE
+   ========================================================================== */
+
+/* Importazione vettoriale dei font da Google Fonts:
+   - Comic Neue: pesi 400 (Regular), 700 (Bold) e 400 Italic (modalita test)
+   - Fredoka: peso 500 (Medium) dedicato al marchio nell'header
+   - Quicksand: pesi 400 (Regular), 600 (Semi-Bold), 700 (Bold) per il corpo del testo */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400&family=Fredoka:wght@500&family=Quicksand:wght@400;600;700&display=swap');
+
+/* ==========================================================================
+   2. VARIABILI GLOBALI E DESIGN TOKENS (:root)
+   ========================================================================== */
+
+/* Lo pseudoelemento :root corrisponde al tag radice <html>. 
+   Le variabili qui definite sono costanti globali ereditate da tutti i componenti. */
+:root {
+    /* Mappatura Cromatica Vettoriale (Valori esadecimali estratti dal logo) */
+    --color-teal: #6FA39D;          /* Verde Salvia / Ottanio (Lettera P) */
+    --color-green: #90B77D;         /* Verde Mela Pastello (Lettera E) */
+    --color-yellow: #F3B256;        /* Giallo Miele / Arancio Chiaro (Lettera S) */
+    --color-purple: #9C8CB9;        /* Lilla / Viola Salvia (Lettera C) */
+    --color-blue: #7092C0;          /* Azzurro Polvere (Lettera A) */
+
+    /* Allocazione Funzionale dei Colori per l'Interfaccia Utente (UI) */
+    --primary-color: var(--color-teal);    /* Colore primario per titoli e barra header */
+    --primary-hover: #598580;            /* Tonalita scura per stati di hover/pressione */
+    --accent-color: var(--color-yellow);   /* Colore ad alto impatto per elementi di conversione */
+    --bg-light: #fbfdfb;                 /* Sfondo caldo ad altissima riflettenza per riposo visivo */
+    --text-dark: #334155;                /* Antracite/Slate per il massimo contrasto del testo */
+    --text-muted: #64748b;               /* Grigio neutro desaturato per i sottotitoli */
+    --white: #ffffff;                    /* Bianco puro */
+    
+    /* Configurazione Parametri Tipografici e Geometrici */
+    --font-main: 'Quicksand', sans-serif; /* Applicazione di Quicksand per corpo testo e titoli */
+    /*--font-main: 'Comic Neue', cursive, sans-serif; /* Fallback su font generici se CDN offline */
+    --max-width: 1200px;                 /* Saturazione larghezza contenitore su schermi grandi */
+    --transition: all 0.3s ease;         /* Curva di attenuazione per transizioni di stato fluide */
+}
+
+/* ==========================================================================
+   3. RESET DEGLI STANDARD BROWSER E SETTAGGI GLOBALI
+   ========================================================================== */
+
+/* Il selettore universale '*' azzera i margini e i padding nativi imposti dai vari browser */
+* {
+    margin: 0;
+    padding: 0;
+    /* Algoritmo di calcolo del box model: include padding e bordi all'interno della dimensione totale */
+    box-sizing: border-box;
+}
+
+/* Attiva l'interpolazione cinematica fluida durante la navigazione tramite ancore interne (#) */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Impostazioni generali del corpo della pagina */
+body {
+    font-family: var(--font-main);
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: 1.6;               /* Interlinea relativa per garantire ottima leggibilita */
+    font-size: 1.1rem;              /* Dimensione base incrementata a 17.6px (1rem = 16px) */
+}
+
+/* Contenitore strutturale riutilizzabile per il vincolo delle dimensioni di pagina */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;                 /* Margine verticale 0, margine orizzontale automatico per centratura */
+    padding: 0 20px;                /* Padding di sicurezza laterale per evitare il contatto con i bordi dello schermo */
+}
+
+/* ==========================================================================
+   4. STRUTTURA DI NAVIGAZIONE E HEADER (STICKY NAVBAR)
+   ========================================================================== */
+
+.header {
+    background-color: var(--white);
+    /* Ombra vettoriale leggera per staccare visivamente la barra dal contenuto sottostante */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    /* Comportamento adesivo: la barra rimane bloccata in alto durante lo scorrimento */
+    position: sticky;
+    top: 0;
+    z-index: 1000;                  /* Priorita di sovrapposizione Z-axis massima */
+}
+
+.nav-container {
+    /* Attivazione Flexbox in modalita 1D orizzontale */
+    display: flex;
+    justify-content: space-between; /* Allinea il logo a sinistra e il menu a destra */
+    align-items: center;            /* Allineamento verticale sulla linea mediana del blocco */
+    height: 75px;                   /* Altezza fissa dell'header */
+}
+
+/* Formattazione avanzata del Logo Testuale multi-colore nell'Header */
+.logo-text {
+    font-family: 'Fredoka', sans-serif; /* Applicazione del font arrotondato Fredoka Medium */
+    font-size: 1.9rem;                  /* Leggero incremento di scala per bilanciare il nuovo font */
+    font-weight: 500;                  /* Peso Medium nativo */
+    color: var(--text-dark);
+    text-decoration: none;             /* Rimuove la sottolineatura nativa dai link */
+    letter-spacing: 0px;               /* Azzeramento spaziatura per ottimizzare il kerning di Fredoka */
+}
+
+/* Assegnazione puntuale dei colori del brand alle singole lettere della parola PESCA */
+.p-teal   { color: var(--color-teal); }
+.e-green  { color: var(--color-green); }
+.s-yellow { color: var(--color-yellow); }
+.c-purple { color: var(--color-purple); }
+.a-blue   { color: var(--color-blue); }
+
+.nav-menu ul {
+    display: flex;                  /* Dispone le voci di menu in sequenza orizzontale */
+    list-style: none;               /* Rimuove i pallini/punti elenco di default delle liste <ul> */
+    gap: 30px;                      /* Spaziatura nativa costante tra gli elementi del menu */
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 700;
+    transition: var(--transition);  /* Applica la transizione fluida per lo stato di hover */
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);   /* Cambio colore dinamico al passaggio del cursore */
+}
+
+/* ==========================================================================
+   5. SEZIONE HERO (COPERTINA E PRESENTAZIONE PRINCIPALE)
+   ========================================================================== */
+
+.hero {
+    /* Gradient vettoriale lineare orientato a 135 gradi basato sui toni freddi desaturati */
+    background: linear-gradient(135deg, #f0f7f6 0%, #eef4fb 100%);
+    padding: 90px 0;                /* Spaziatura interna verticale di 90px sopra e sotto */
+    text-align: center;             /* Centratura orizzontale di tutti gli elementi figli */
+}
+
+.hero-logo-wrapper {
+    margin-bottom: 20px;            /* Stacco verticale tra il logo grafico e il titolo H1 */
+}
+
+.hero-logo {
+    max-width: 280px;              /* Limite massimo di ingombro orizzontale su monitor desktop */
+    width: 100%;                   /* Adattabilita fluida al 100% dello spazio disponibile */
+    height: auto;                  /* Calcolo automatico dell'altezza per preservare l'aspect ratio */
+    display: inline-block;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.hero-content h2 {
+    font-size: 1.5rem;
+    color: var(--color-purple);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero-payoff {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-teal);
+    max-width: 750px;
+    margin: 0 auto 30px auto;        /* Centratura orizzontale del blocco di testo con margine inferiore */
+}
+
+/* Formattazione Pulsante di Conversione Principale (Call To Action - CTA) */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-yellow);
+    color: var(--white);
+    padding: 14px 30px;
+    border-radius: 25px;            /* Bordo curvo arrotondato coerente con le geometrie del logo */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    /* Ombra soft colorata calcolata con canale alfa/trasparenza RGBA al 30% */
+    box-shadow: 0 4px 12px rgba(243, 178, 86, 0.3);
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background-color: #e09f41;     /* Scurimento tonale al passaggio del mouse */
+    transform: translateY(-2px);    /* Sollevamento cinematico di 2px sull'asse Y */
+}
+
+/* ==========================================================================
+   6. MEDIA QUERIES (ADATTABILITÀ MOBILE E RESPONSIVE DESIGN)
+   ========================================================================== */
+
+/* Regole applicate unicamente quando la larghezza dello schermo e inferiore a 768px (Tablet/Smartphone) */
+@media (max-width: 768px) {
+    .hero-logo {
+        max-width: 200px;           /* Riduzione dimensionale del logo per ottimizzare la vista mobile */
+    }
+    
+    .hero-content h1 {
+        font-size: 2.2rem;          /* Scalatura del font H1 per evitare spezzature di parola indesiderate */
+    }
+}
+
+/* ==========================================================================
+   7. SEZIONE FOOTER (PIÈ DI PAGINA)
+   ========================================================================== */
+
+.footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 40px 0 20px 0;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;         /* Dispone gli elementi in colonna verticale */
+    align-items: center;
+    gap: 20px;                      /* Spaziatura costante tra le sezioni del footer */
+    text-align: center;
+}
+
+.footer-info a {
+    color: var(--color-yellow);     /* Link evidenziati con il colore d'accento giallo */
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.footer-info a:hover {
+    text-decoration: underline;     /* Ripristina la sottolineatura allo stato di hover */
+}
+
+.footer-copy {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    /* Separatore orizzontale vettoriale ottenuto con un bordo superiore semi-trasparente */
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 15px;
+    width: 100%;
+}
