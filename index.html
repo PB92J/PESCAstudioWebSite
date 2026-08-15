@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="it">
+
+<head>
+    <!-- Encoding dei Caratteri: garantisce il corretto rendering dei caratteri accentati (es. a, e, o) -->
+    <meta charset="UTF-8">
+
+    <!-- Configurazione Viewport Mobile: width=device-width adatta la pagina alla larghezza dello schermo, initial-scale=1.0 imposta lo zoom al 100% -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Meta Description: testo di anteprima mostrato da Google nei risultati di ricerca sottot il titolo della pagina -->
+    <meta name="description" content="Dott.ssa Nadia Bandera, Psicologa, Analista del Comportamento e Supervisore ABA.">
+    
+    <!-- Titolo visibile nella scheda del browser e nei preferiti -->
+    <title>Studio PESCA | Dott.ssa Nadia Bandera - Analista del Comportamento ABA</title>
+
+    <!-- Inclusione CSS: collega il foglio di stile esterno situato nella sottocartella css/ -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header Semantico: Identifica l'intestazione superiore del sito.
+     La classe class="header" servirà come aggancio CSS per posizionarlo fisicamente in alto a schermo (fixed/sticky) -->
+    <header class="header">
+        
+        <!-- Contenitore di layout: limita la larghezza massima del contenuto su schermi ultrawide -->
+        <div class="container nav-container">
+            
+            <!-- Link Brand/Logo: href="#" riposiziona la pagina in cima al click -->
+            <a href="#" class="logo">Studio PESCA</a>
+            
+            <!-- Navigazione Semantica: menu principale del sito -->
+            <nav class="nav-menu">
+                <ul>
+                    <!-- Ancore interne: il prefisso # permette lo scroll diretto agli ID della pagina -->
+                    <li><a href="#chi-sono">Chi Sono</a></li>
+                    <li><a href="#percorsi">Percorsi e Trattamenti</a></li>
+                    <li><a href="#contatti">Contatti</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+    </header>
+
+    <!-- Main Semantico: contenitore primario di tutto il contenuto della pagina -->
+    <main>
+        
+        <!-- Section Hero: copertina principale di impatto visivo (primo impatto utente) -->
+        <section class="hero">
+            <div class="container hero-content">
+                
+                <!-- Titolo H1: unico per pagina, nodo fondamentale per l'indicizzazione SEO -->
+                <h1>Dott.ssa Nadia Bandera</h1>
+                
+                <!-- Titolo H2: sottotitolo descrittivo delle qualifiche professionali -->
+                <h2>Psicologa, Analista del Comportamento e Supervisore ABA</h2>
+                
+                <!-- Paragrafo di sintesi della proposta di valore -->
+                <p>Interventi comportamentali strutturati, consulenza e supervisione clinica basata sull'Analisi Applicata del Comportamento.</p>
+                
+                <!-- Call To Action (CTA): pulsante di conversione che manda al modulo contatti -->
+                <a href="#contatti" class="btn-primary">Contattami per ulteriori informazioni</a>
+                
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Footer Semantico: pie di pagina con contatti e note legali -->
+    <footer class="footer">
+        <div class="container footer-content">
+            
+            <!-- Blocco Contatti Diretti -->
+            <div class="footer-info">
+                <!-- Link mailto: apre direttamente il client di posta predefinito dell'utente -->
+                <p><strong>Email:</strong> <a href="mailto:info@studiopesca.it">info@studiopesca.it</a></p>
+                <!-- Indirizzo dello studio clinico -->
+                <p><strong>Sede:</strong> Via San Polo 264, 25123 Brescia (BS)</p>
+            </div>
+
+            <!-- Note sul Copyright -->
+            <div class="footer-copy">
+                <!-- &copy; genera il simbolo grafico © -->
+                <p>&copy; 2026 Studio PESCA - Dott.ssa Nadia Bandera. Tutti i diritti riservati.</p>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
