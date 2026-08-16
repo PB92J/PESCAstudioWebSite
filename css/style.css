@@ -21,9 +21,14 @@
     --color-yellow: #F3B256;        /* Giallo Miele / Arancio Chiaro (Lettera S) */
     --color-purple: #9C8CB9;        /* Lilla / Viola Salvia (Lettera C) */
     --color-blue: #7092C0;          /* Azzurro Polvere (Lettera A) */
+    --color-blue-light: #B3D8F0;       /* Light Blue solido per sfondi/card */
+    --color-pesca: #F8AD9D;        /* Pesca Pastello principale */
+    --color-pesca-light: #FFE5D9;  /* Pesca Pastello chiarissimo (sfondi/hover) */
+    --color-pesca-dark: #E88A78;    /* Pesca Scuro / Corallo Caldo */
+    --color-slate: #788896;         /* Grigio Ardesia Desaturato
 
     /* Allocazione Funzionale dei Colori per l'Interfaccia Utente (UI) */
-    --primary-color: var(--color-teal);    /* Colore primario per titoli e barra header */
+    --primary-color: var(--color-blue);    /* Colore primario per titoli e barra header */
     --primary-hover: #598580;            /* Tonalita scura per stati di hover/pressione */
     --accent-color: var(--color-yellow);   /* Colore ad alto impatto per elementi di conversione */
     --bg-light: #fbfdfb;                 /* Sfondo caldo ad altissima riflettenza per riposo visivo */
@@ -72,14 +77,72 @@ body {
 }
 
 /* ==========================================================================
+   OPTIMIZATION: RESPONSIVE MOBILE LAYOUT (< 768px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    /* Sblocco dell'altezza fissa dell'header per consentire l'espansione verticale */
+    .header {
+        height: auto;                   /* Rimuove vincoli di altezza rigidi */
+    }
+
+    /* 1. Header: Conversione del contenitore da orizzontale a colonna (due righe) */    
+    .nav-container {
+        flex-direction: column;         /* Dispone il logo in alto e il menu sotto */
+        align-items: center;            /* Centra perfettamente entrambi gli elementi */
+        gap: 12px;                      /* Distanza verticale costante tra logo e menu */
+        padding: 12px 10px;
+    }
+
+    /* 2. Logo: Centratura e dimensione leggibile */
+    .logo-text {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    /* 3. Menu di navigazione: Distribuzione bilanciata sulla seconda riga */
+    .nav-menu ul {
+        display: flex;
+        justify-content: center;        /* Centra i link orizzontalmente */
+        align-items: center;
+        gap: 15px;                      /* Spaziatura uniforme e definita tra tutte le voci */
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-menu a {
+        font-size: 0.9rem;              /* Dimensione ottimale per touch target su smartphone */
+        white-space: nowrap;            /* Impedisce ai singoli link di spezzarsi */
+    }
+
+    /* 4. Prevenzione Overflow della Hero e dei Contenuti */
+    .hero-content h1 {
+        font-size: 2rem;                /* Riduzione titolo principale per schermi stretti */
+    }
+
+    .hero-content h2 {
+        font-size: 1.2rem;              /* Riduzione sottotitolo */
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 100%;
+        box-sizing: border-box;         /* Garantisce che il padding rientri nella larghezza totale */
+    }
+}
+
+/* ==========================================================================
    4. STRUTTURA DI NAVIGAZIONE E HEADER (STICKY NAVBAR)
    ========================================================================== */
 
 .header {
     background-color: var(--white);
     /* Ombra vettoriale leggera per staccare visivamente la barra dal contenuto sottostante */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-    /* Comportamento adesivo: la barra rimane bloccata in alto durante lo scorrimento */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Ombra di stacco inferiore per separarlo dalla Hero */
+    width: 100%;
     position: sticky;
     top: 0;
     z-index: 1000;                  /* Priorita di sovrapposizione Z-axis massima */
@@ -90,7 +153,9 @@ body {
     display: flex;
     justify-content: space-between; /* Allinea il logo a sinistra e il menu a destra */
     align-items: center;            /* Allineamento verticale sulla linea mediana del blocco */
-    height: 75px;                   /* Altezza fissa dell'header */
+    /*height: 75px;                   /* Altezza fissa dell'header */
+    height: auto;                      /* Permette al contenitore di crescere se il contenuto aumenta */
+    padding: 10px 20px;
 }
 
 /* Formattazione avanzata del Logo Testuale multi-colore nell'Header */
@@ -100,26 +165,33 @@ body {
     font-weight: 500;                  /* Peso Medium nativo */
     color: var(--text-dark);
     text-decoration: none;             /* Rimuove la sottolineatura nativa dai link */
+    white-space: nowrap;               /* Impedisce tassativamente a 'Studio PESCA' di spezzarsi su due righe */
     letter-spacing: 0px;               /* Azzeramento spaziatura per ottimizzare il kerning di Fredoka */
+    flex-shrink: 0;                    /* Vieta al browser di schiacciare il logo */
 }
 
 /* Assegnazione puntuale dei colori del brand alle singole lettere della parola PESCA */
-.p-teal   { color: var(--color-teal); }
-.e-green  { color: var(--color-green); }
-.s-yellow { color: var(--color-yellow); }
-.c-purple { color: var(--color-purple); }
-.a-blue   { color: var(--color-blue); }
+.studio-color   { color: var(--color-blue); }
+.p-color   { color: var(--color-pesca-dark); }
+.e-color  { color: var(--color-pesca-dark); }
+.s-color { color: var(--color-green); }
+.c-color { color: var(--color-yellow); }
+.a-color   { color: var(--color-purple); }
 
 .nav-menu ul {
     display: flex;                  /* Dispone le voci di menu in sequenza orizzontale */
     list-style: none;               /* Rimuove i pallini/punti elenco di default delle liste <ul> */
-    gap: 30px;                      /* Spaziatura nativa costante tra gli elementi del menu */
+    gap: 30px;                         /* Spaziatura controllata tra i link */
+    margin: 0;
+    padding: 0;
 }
 
 .nav-menu a {
     text-decoration: none;
     color: var(--text-dark);
     font-weight: 700;
+    font-size: 1rem;
+    white-space: nowrap;            /* Impedisce alle voci come 'Percorsi e Trattamenti' di andare a capo */
     transition: var(--transition);  /* Applica la transizione fluida per lo stato di hover */
 }
 
@@ -158,7 +230,7 @@ body {
 
 .hero-content h2 {
     font-size: 1.5rem;
-    color: var(--color-purple);
+    color: var(--color-pesca-dark);
     font-weight: 600;
     margin-bottom: 20px;
 }
@@ -207,7 +279,384 @@ body {
 }
 
 /* ==========================================================================
-   7. SEZIONE FOOTER (PIÈ DI PAGINA)
+   7. SEZIONE CHI SONO (#chi-sono)
+   ========================================================================== */
+
+.about-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+/* Modello Flexbox per affiancare foto e testo */
+.about-container {
+    display: flex;
+    align-items: center;            /* Allineamento verticale centrato sui baricentri */
+    gap: 50px;                      /* Spaziatura orizzontale di 50px tra foto e testo */
+}
+
+/* Contenitore e formattazione Immagine Professionale */
+.about-image-wrapper {
+    flex: 1;                        /* Ripartizione dello spazio: 1 quota */
+    max-width: 380px;               /* Ingombro massimo orizzontale */
+}
+
+.about-image {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;            /* Angoli arrotondati coerenti con la geometria del sito */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06); /* Ombra morbida di stacco */
+    display: block;
+    object-fit: cover;
+}
+
+/* Contenitore Testo */
+.about-text {
+    flex: 1.5;                      /* Ripartizione dello spazio: 1.5 quote (piu largo della foto) */
+}
+
+.about-text h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.about-text .subtitle {
+    font-size: 1.15rem;
+    color: var(--color-pesca-dark);
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    margin-bottom: 18px;
+    color: var(--text-dark);
+}
+
+/* Lista punti chiave con bordo colorato d'accento verde salvia */
+.about-highlights {
+    list-style: none;
+    margin-top: 25px;
+    padding-left: 0;
+}
+
+.about-highlights li {
+    position: relative;
+    padding: 12px 15px 12px 20px;
+    margin-bottom: 12px;
+    background-color: var(--bg-light);
+    border-left: 4px solid var(--color-teal);
+    border-radius: 0 8px 8px 0;
+    font-size: 1.05rem;
+}
+
+/* Adattamento Responsive Mobile per la Sezione Chi Sono */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;     /* Converte il layout da orizzontale a verticale su Smartphone */
+        gap: 30px;
+    }
+    
+    .about-image-wrapper {
+        max-width: 260px;           /* Riduzione della foto su mobile */
+        margin: 0 auto;             /* Centratura orizzontale */
+    }
+}
+
+/* ==========================================================================
+   8. SEZIONE PERCORSI E TRATTAMENTI (#percorsi)
+   ========================================================================== */
+
+.services-section {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+}
+
+.services-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+.services-header h2 {
+    font-size: 2.2rem;
+    color: var(--color-pesca-dark); /* Azzurro Polvere Istituzionale (#5B7DB1) */
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.services-intro {
+    font-size: 1.15rem;
+    color: var(--text-dark);
+}
+
+/* Griglia responsive a colonne flessibili tramite CSS Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Struttura base della singola scheda (Card) - Geometria pulita 4px */
+.service-card {
+    background-color: #ffffff;
+    border-radius: 4px;                          /* Taglio netto e minimale */
+    border: 1px solid rgba(44, 62, 80, 0.08);    /* Micro-bordo perimetrale di contenimento */
+    border-top: 4px solid transparent;           /* Sede per il colore d'accento */
+    padding: 30px 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02), 0 8px 16px rgba(0, 0, 0, 0.04);
+    position: relative;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(44, 62, 80, 0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03), 0 12px 24px rgba(0, 0, 0, 0.06);
+}
+
+.service-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+/* Etichetta (Badge) di identificazione della categoria */
+.card-badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 4px 12px;
+    border-radius: 4px; /* Uniformato a 4px per coerenza con la card */
+    margin-bottom: 15px;
+}
+
+/* MODIFICATORE 1: Card Azzurro Polvere */
+.service-card.card-blue {
+    border-top-color: var(--color-blue);
+    background: linear-gradient(180deg, rgba(var(--color-blue-rgb), 0.08) 0%, #ffffff 100%);
+}
+
+.service-card.card-blue .card-badge {
+    background-color: rgba(var(--color-blue-rgb), 0.15);
+    color: var(--color-blue);
+}
+
+/* MODIFICATORE 2: Card Grigio Ardesia (Neutro) */
+.service-card.card-grey {
+    border-top-color: var(--color-slate);
+    background: linear-gradient(180deg, rgba(var(--color-slate-rgb), 0.08) 0%, #ffffff 100%);
+}
+
+.service-card.card-grey .card-badge {
+    background-color: rgba(var(--color-slate-rgb), 0.15);
+    color: var(--color-slate);
+}
+
+/* --------------------------------------------------------------------------
+   DECLINAZIONE CROMATICA DELLE CARD (Mappatura coerente con il Logo)
+   -------------------------------------------------------------------------- */
+
+/* Modulo (Lilla / Viola) */
+.card-purple {
+    border-top-color: var(--color-purple);
+    background: linear-gradient(180deg, rgba(156, 140, 185, 0.08) 0%, #ffffff 100%);
+}
+.card-purple .card-badge {
+    background-color: rgba(156, 140, 185, 0.15);
+    color: var(--color-purple);
+}
+
+/* Modulo (Giallo Miele) */
+.card-yellow {
+    border-top-color: var(--color-yellow);
+    background: linear-gradient(180deg, rgba(243, 178, 86, 0.08) 0%, #ffffff 100%);
+}
+.card-yellow .card-badge {
+    background-color: rgba(243, 178, 86, 0.2);
+    color: #d68925;
+}
+
+/* Modulo (Verde Mela) */
+.card-green {
+    border-top-color: var(--color-green);
+    background: linear-gradient(180deg, rgba(144, 183, 125, 0.08) 0%, #ffffff 100%);
+}
+.card-green .card-badge {
+    background-color: rgba(144, 183, 125, 0.2);
+    color: #638d50;
+}
+
+/* Modulo (Verde Salvia / Ottanio) */
+.card-teal {
+    border-top-color: var(--color-teal);
+    background: linear-gradient(180deg, rgba(111, 163, 157, 0.08) 0%, #ffffff 100%);
+}
+.card-teal .card-badge {
+    background-color: rgba(111, 163, 157, 0.2);
+    color: var(--color-teal);
+}
+
+/* Modulo (Azzurro Polvere) */
+.card-blue {
+    border-top-color: var(--color-blue);
+    background: linear-gradient(180deg, rgba(112, 146, 192, 0.08) 0%, #ffffff 100%);
+}
+
+.card-blue .card-badge {
+    background-color: rgba(112, 146, 192, 0.2);
+    color: var(--color-blue);
+}
+
+/* Modulo Card Neutra (Grigio Ardesia) */
+.card-grey {
+  border-top-color: var(--color-slate);
+  background: linear-gradient(180deg, rgba(120, 136, 150, 0.08) 0%, #ffffff 100%);
+}
+
+.card-grey .card-badge {
+  background-color: rgba(120, 136, 150, 0.15);
+  color: var(--color-slate);
+}
+
+/* ==========================================================================
+   9. SEZIONE CONTATTI (#contatti) - Codice Refactorizzato
+   ========================================================================== */
+
+.contact-section {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.contact-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+.contact-header h2 {
+  font-size: 2.2rem;
+  color: var(--color-blue);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.contact-intro {
+  font-size: 1.15rem;
+  color: var(--text-dark);
+}
+
+/* Contenitore schede centrato */
+.contact-cards-wrapper {
+  max-width: 650px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Scheda contatto base */
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  border: 1px solid rgba(44, 62, 80, 0.08); /* Bordo sottile di contenimento neutro */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(44, 62, 80, 0.18);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Contenitore quadrato per l'icona (Proprietà unificate) */
+.info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 6px;
+}
+
+.info-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+}
+
+/* Tipografia interna e gestione link base */
+.info-text h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.info-text p {
+  font-size: 1rem;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.info-text a {
+  font-size: 1rem;
+  color: var(--text-dark);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.info-text a:hover {
+  color: var(--text-dark);
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   VARIANTE 1: Sede e Posizione (Verde)
+   -------------------------------------------------------------------------- */
+
+.info-card-blue .info-icon {
+  background-color: rgba(91, 125, 177, 0.12);
+  color: var(--color-blue);
+}
+
+/* --------------------------------------------------------------------------
+   VARIANTE 2: Email e Contatto (Giallo)
+   -------------------------------------------------------------------------- */
+
+.info-card-pesca .info-icon {
+  background-color: rgba(232, 138, 120, 0.12);
+  color: var(--color-pesca-dark);
+}
+
+.info-card-pesca .info-text a {
+  color: var(--text-dark);
+}
+
+.info-card-pesca .info-text a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+
+/* ==========================================================================
+   10. SEZIONE FOOTER (PIÈ DI PAGINA)
    ========================================================================== */
 
 .footer {
