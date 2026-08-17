@@ -627,33 +627,113 @@ body {
   text-decoration: underline;
 }
 
-/* --------------------------------------------------------------------------
-   VARIANTE 1: Sede e Posizione (Verde)
-   -------------------------------------------------------------------------- */
+/* ==========================================================================
+   9. SEZIONE CONTATTI - Layout a 3 Schede con Icone Laterali
+   ========================================================================== */
 
-.info-card-blue .info-icon {
-  background-color: rgba(91, 125, 177, 0.12);
-  color: var(--color-blue);
+/* Contenitore Grid: 1 colonna su Mobile, 3 colonne su Desktop */
+.contact-cards-wrapper.three-columns {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
-/* --------------------------------------------------------------------------
-   VARIANTE 2: Email e Contatto (Giallo)
-   -------------------------------------------------------------------------- */
-
-.info-card-pesca .info-icon {
-  background-color: rgba(232, 138, 120, 0.12);
-  color: var(--color-pesca-dark);
+/* Breakpoint Desktop (>= 768px): 3 colonne affiancate */
+@media (min-width: 768px) {
+  .contact-cards-wrapper.three-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-.info-card-pesca .info-text a {
+/* Scheda con disposizione orizzontale (Icona a sinistra, Testo a destra) */
+.contact-cards-wrapper .info-card {
+  display: flex;
+  flex-direction: row; /* Disposizione affiancata */
+  align-items: flex-start; /* Allineamento in alto */
+  gap: 16px; /* Spazio tra icona e contenuto testo */
+  padding: 20px;
+  height: 100%;
+  background-color: #ffffff;
+  border: 1px solid rgba(44, 62, 80, 0.08);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-cards-wrapper .info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Box vettoriale per l'icona laterale */
+.contact-cards-wrapper .info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px; /* Impedisce alla flexbox di deformare il quadrato dell'icona */
+  border-radius: 6px;
+  margin-bottom: 0;
+}
+
+.contact-cards-wrapper .info-text h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 6px;
   color: var(--text-dark);
 }
 
-.info-card-pesca .info-text a:hover {
-  opacity: 0.8;
-  text-decoration: underline;
+.contact-cards-wrapper .info-text p {
+  font-size: 0.95rem;
+  margin: 0;
+  color: var(--text-dark);
 }
 
+/* --------------------------------------------------------------------------
+   VARIANTE BLUE/GREEN: Schede Territorio e Studio
+   -------------------------------------------------------------------------- */
+.info-card-blue .info-icon {
+  background-color: rgba(91, 125, 177, 0.12);
+  color: var(--color-green);
+}
+
+.info-card-blue .info-text .map-link {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--color-green);
+  font-weight: 600;
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+.info-card-blue .info-text .map-link:hover {
+  opacity: 0.75;
+}
+
+/* --------------------------------------------------------------------------
+   VARIANTE PESCA/YELLOW: Scheda Email
+   -------------------------------------------------------------------------- */
+.info-card-pesca .info-icon {
+  background-color: rgba(232, 138, 120, 0.12);
+  color: var(--color-yellow);
+}
+
+.info-card-pesca .info-text .contact-email-link {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--color-yellow);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+.info-card-pesca .info-text .contact-email-link:hover {
+  opacity: 0.75;
+}
 
 /* ==========================================================================
    10. SEZIONE FOOTER (PIÈ DI PAGINA)

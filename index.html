@@ -158,53 +158,78 @@
         </div>
     </section>
 
-    <!-- index.html - Sezione Contatti completa (#contatti) -->
-    <section id="contatti" class="contact-section">
-    <div class="container">
+<!-- ==========================================================================
+     9. SEZIONE CONTATTI E SEDE (#contatti)
+     ========================================================================== -->
+
+<!-- index.html - Sezione Contatti a 3 Schede Simmetriche -->
+<section id="contatti" class="contact-section">
+  <div class="container">
     
-    <!-- Intestazione di Sezione (Titolo e Sottotitolo) -->
+    <!-- Intestazione di Sezione -->
     <div class="contact-header">
-      <h2>Contatti</h2>
+      <h2>Contatti e Sede</h2>
       <p class="contact-intro">
         Per richiedere un primo colloquio conoscitivo o informazioni sui percorsi ABA e sulle consulenze cliniche.
       </p>
     </div>
 
-    <!-- index.html - Sezione Contatti con schede a colorazione differenziata -->
-    <div class="contact-cards-wrapper">
-    
-
-    <!-- Blocco 1: Email / Contatto Diretto (Accento Pesca) -->
-    <div class="info-card info-card-pesca">
+    <!-- Contenitore a 3 Colonne -->
+    <div class="contact-cards-wrapper three-columns">
+      
+      <!-- Scheda 1: Attività sul Territorio -->
+      <div class="info-card info-card-blue">
         <div class="info-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect width="20" height="16" x="2" y="4" rx="2"/>
-            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-        </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/>
+            <line x1="8" y1="2" x2="8" y2="18"/>
+            <line x1="16" y1="6" x2="16" y2="22"/>
+          </svg>
         </div>
         <div class="info-text">
-        <h3>Email</h3>
-        <p><a href="mailto:info@pescastudio.it">info@pescastudio.it</a></p>
+          <h3>Attività sul Territorio</h3>
+          <p>Consulenze, parent training e supporto scolastico attivi su Brescia e provincia.</p>
         </div>
-    </div>
+      </div>
 
-    <!-- Blocco 2: Sede e Ambito Territoriale (Accento Azzurro Polvere) -->
-    <div class="info-card info-card-blue">
+      <!-- Scheda 2: Terapie in Studio -->
+      <div class="info-card info-card-blue">
         <div class="info-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
             <circle cx="12" cy="10" r="3"/>
-        </svg>
+          </svg>
         </div>
         <div class="info-text">
-        <h3>Sede e Ambiti d'Intervento</h3>
-        <p>Brescia e provincia (In studio, a domicilio e supporto scolastico)</p>
+          <h3>Terapie in Studio</h3>
+          <p>Trattamenti individuali in sede:</p>
+          <a href="https://maps.google.com/?q=Via+San+Polo+264+25124+Brescia" target="_blank" rel="noopener noreferrer" class="map-link">
+            Via San Polo 264, Brescia ↗
+          </a>
         </div>
+      </div>
+
+      <!-- Scheda 3: Contatto Diretto Email -->
+      <div class="info-card info-card-pesca">
+        <div class="info-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        <div class="info-text">
+          <h3>Scrivi allo Studio</h3>
+          <p>Per informazioni o un primo colloquio:</p>
+          <a href="mailto:info@pescastudio.it" class="contact-email-link">info@pescastudio.it</a>
+        </div>
+      </div>
+
     </div>
 
+  </div>
+</section>
 
-    </div>
-            
+
     <!-- Footer Semantico: pie di pagina con contatti e note legali -->
     <footer class="footer">
         <div class="container footer-content">
@@ -212,11 +237,11 @@
             <!-- Blocco Contatti Diretti -->
             <div class="footer-info">
                 <!-- Link mailto: apre direttamente il client di posta predefinito dell'utente -->
-                <p><strong>Email:</strong> <a href="mailto:info@studiopesca.it">info@studiopesca.it</a></p>
+                <p><strong>Email:</strong> <a href="mailto:info@pescastudio.it" class="contact-email-link">info@pescastudio.it</a></p>
                 <!-- Indirizzo dello studio clinico -->
-                <p><strong>Sede:</strong> Via San Polo 264, 25123 Brescia (BS)</p>
+                <p><strong>Sede:</strong> Via San Polo 264, 25124 Brescia (BS)</p>
                 <!-- P.IVA: -->
-                <p><strong>P.IVA:</strong> [Inserire Numero P.IVA]</p>
+                <p><strong>P.IVA:</strong> 04097480984</p>
             </div>
 
             <!-- Note sul Copyright -->
