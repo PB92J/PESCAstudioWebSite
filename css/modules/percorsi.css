@@ -183,3 +183,8 @@
     --card-accent: #4a6fa5;
     background: linear-gradient(180deg, rgba(74, 111, 165, 0.08) 0%, #ffffff 100%);
 }
+
+/* Ereditarietà dinamica del colore del titolo dalla variabile della card */
+.service-card h3 {
+    color: var(--card-accent);
+}
