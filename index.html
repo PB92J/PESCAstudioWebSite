@@ -6,7 +6,7 @@
     <!-- Encoding dei Caratteri: garantisce il corretto rendering dei caratteri accentati (es. a, e, o) -->
     <meta charset="UTF-8">
 
-    <!-- Configurazione Viewport Mobile: width=device-width adatta la pagina alla larghezza dello schermo, initial-scale=1.0 imposta lo zoom al 100% -->
+    <!-- Viewport responsive: scala la pagina al 100% della larghezza dello schermo del dispositivo (mobile/desktop) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Meta Description: testo di anteprima mostrato da Google nei risultati di ricerca sottot il titolo della pagina -->
@@ -15,243 +15,37 @@
     <!-- Titolo visibile nella scheda del browser e nei preferiti -->
     <title>Studio PESCA | Dott.ssa Nadia Bandera - Analista del Comportamento ABA</title>
 
-    <!-- Inclusione CSS: collega il foglio di stile esterno situato nella sottocartella css/ -->
+    <!-- Collegamento al foglio di stile CSS globale -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- Header Semantico: Identifica l'intestazione superiore del sito.
-     La classe class="header" servirà come aggancio CSS per posizionarlo fisicamente in alto a schermo (fixed/sticky) -->
-    <header class="header">
-        <!-- Contenitore di layout: limita la larghezza massima del contenuto su schermi ultrawide -->
-        <div class="container nav-container">
-            
-            <!-- Link Brand/Logo: href="#" riposiziona la pagina in cima al click -->
-            <a href="#" class="logo-text">
-            <span class="studio-color">Studio</span> <span class="p-color">P</span><span class="e-color">E</span><span class="s-color">S</span><span class="c-color">C</span><span class="a-color">A</span>
-            </a>
-            
-            <!-- Navigazione Semantica: menu principale del sito -->
-            <nav class="nav-menu">
-                <ul>
-                    <!-- Ancore interne: il prefisso # permette lo scroll diretto agli ID della pagina -->
-                    <li><a href="#chi-sono">Chi Sono</a></li>
-                    <li><a href="#percorsi">Percorsi e Trattamenti</a></li>
-                    <li><a href="#contatti">Contatti</a></li>
-                </ul>
-            </nav>
-            
-        </div>
-    </header>
+  <!-- Header modulare: include logo e barra di navigazione -->
+  <div data-include="_includes/header.html"></div>
 
-    <!-- Main Semantico: contenitore primario di tutto il contenuto della pagina -->
+    <!-- Contenitore principale dei contenuti di valore (tag semantico HTML5) -->
     <main>
-        
-        <!-- Section Hero: copertina principale di impatto visivo (primo impatto utente) -->
-        <section class="hero">
-            <div class="container hero-content">
-                
-                <!-- Logo Vettoriale/Grafico principale -->
-                <!-- Nota: Assicurati di salvare l'immagine del logo nella cartella assets/ -->
-                <div class="hero-logo-wrapper">
-                    <img src="assets/logo.png" alt="Logo Studio PESCA - Percorsi verso la comunicazione, socialità e autonomia" class="hero-logo">
-                </div>
 
-                <!-- Titolo H1: unico per pagina, nodo fondamentale per l'indicizzazione SEO -->
-                <h1>Dott.ssa Nadia Bandera</h1>
-                
-                <!-- Titolo H2: sottotitolo descrittivo delle qualifiche professionali -->
-                <h2>Psicologa, Analista del Comportamento e Supervisore ABA</h2>
-                
-                <!-- Paragrafo di sintesi della proposta di valore -->
-                <p>Interventi comportamentali strutturati, consulenza e supervisione clinica basata sull'Analisi Applicata del Comportamento.</p>
-                
-                <!-- Call To Action (CTA): pulsante di conversione che manda al modulo contatti -->
-                <!-- <a href="#contatti" class="btn-primary">Contattami per ulteriori informazioni</a> -->
-                
-            </div>
-        </section>
-        
+      <!-- Modulo Hero: schermata principale di copertina -->
+      <div data-include="_includes/hero.html"></div>
+      
+      <!-- Modulo Chi Sono: presentazione biografica e credenziali professionali -->
+      <div data-include="_includes/chi-sono.html"></div>
+
+      <!-- Modulo Percorsi: servizi, trattamenti e interventi ABA -->
+      <div data-include="_includes/percorsi.html"></div>
+
+      <!-- Modulo Contatti: form, mappa e dati dello studio -->
+      <div data-include="_includes/contatti.html"></div>
+
     </main>
 
-    <!-- Section Chi Sono: Profilo professionale, foto e qualifiche cliniche -->
-        <section id="chi-sono" class="about-section">
-            <div class="container about-container">
-                
-                <!-- Colonna Sinistra: Riquadro Grafico / Foto Professionale -->
-                <div class="about-image-wrapper">
-                    <!-- Nota: Salveremo l'immagine in assets/nadia-bandera.jpg -->
-                    <img src="assets/nadia-bandera.jpg" alt="Dott.ssa Nadia Bandera - Psicologa e Analista del Comportamento ABA" class="about-image">
-                </div>
-
-                <!-- Colonna Destra: Contenuto Testuale e Qualifiche -->
-                <div class="about-text">
-                    <h2>Chi Sono</h2>
-                    <p class="subtitle">Dott.ssa Nadia Bandera — Psicologa e Analista del Comportamento ABA</p>
-                    
-                    <p>Sono una Psicologa, Analista del Comportamento e Supervisore ABA. Mi occupo di progettare e supervisionare interventi comportamentali strutturati, basati sui principi scientifici dell'<strong>Analisi Applicata del Comportamento (ABA)</strong>.</p>
-                    
-                    <p>Il mio lavoro è rivolto a bambini, ragazzi e alle loro famiglie, con l'obiettivo di favorire lo sviluppo delle abilità comunicative, della socialità e dell'autonomia personale, costruendo percorsi individualizzati e coordinati con la scuola e i contesti di vita quotidiana.</p>
-                    
-                    <!-- Lista punti chiave con bordo vettoriale d'accento -->
-                    <ul class="about-highlights">
-                        <li><strong>Valutazione e Intervento:</strong> Progettazione di Piani di Intervento Individualizzati (PAI).</li>
-                        <li><strong>Supervisione Clinica:</strong> Monitoraggio costante delle équipe di lavoro e dei programmi ABA.</li>
-                        <li><strong>Parent Training:</strong> Supporto e formazione continua ai genitori per la gestione dei comportamenti nella quotidianità.</li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
+  <!-- Footer modulare: copyright, note legali, P.IVA e contatti rapidi -->
+  <div data-include="_includes/footer.html"></div>
     
-    <!-- Section Percorsi e Trattamenti: Architettura dei servizi basata sull'acronimo PESCA -->
-    <section id="percorsi" class="services-section">
-        <div class="container">
-                
-            <!-- Intestazione di sezione con introduzione metodologica -->
-            <div class="services-header">
-                   <h2>Percorsi e Trattamenti</h2>
-                   <p class="services-intro">
-                        Ogni intervento viene strutturato su misura partendo da una valutazione funzionale accurata. 
-                        Il modello operativo dello <strong>Studio PESCA</strong> si sviluppa attorno a tre pilastri fondamentali, 
-                        integrati da percorsi di supervisione e supporto alla famiglia.
-                   </p>
-            </div>
-
-            <!-- Griglia delle schede di intervento (Card Grid) -->
-            <div class="services-grid">
-                    
-                <!-- 1. Categoria: Socialità (Richiamo Cromatico alla Lettera S) -->
-                <div class="service-card card-green
-                ">
-                        <h3>Sviluppo della <span class="s-color">Socialità</span></h3>
-                        <p>Interventi mirati all'apprendimento delle abilità di interazione, al gioco condiviso, alla cooperazione tra pari e all'integrazione nei contesti scolastici e ricreativi.</p>
-                </div>
-
-                <!-- 2. Categoria: Comunicazione (Richiamo Cromatico Lettera S) -->
-                <div class="service-card card-yellow">
-                        <h3><span class="c-color">Comunicazione</span> e Linguaggio</h3>
-                        <p>Percorsi per l'acquisizione di sistemi di comunicazione funzionale (verbale, CAA o PECS), volti a ridurre la frustrazione e incrementare l'espressione dei bisogni.</p>
-                </div>
-
-                <!-- 3. Categoria: Autonomia (Richiamo Cromatico: Verde / Lettera E) -->
-                <div class="service-card card-purple">
-                        <h3><span class="a-color">Autonomia</span> Personale e Routine</h3>
-                        <p>Programmi analitici per il raggiungimento delle autonomie di base e avanzate (igiene, cura di sé, gestione del tempo e delle routine domestiche).</p>
-                </div>
-
-                <!-- 4. Modulo Integrativo: Trattamenti e Supervisione (Richiamo Cromatico: Ottanio / Lettera P) -->
-                <div class="service-card card-grey">
-                        <h3>Trattamenti e Supervisione ABA</h3>
-                        <p>Progettazione e monitoraggio continuo di interventi comportamentali analitici (ABA), con supervisione diretta alle équipe operanti a domicilio e a scuola.</p>
-                </div>
-
-               <!-- 5. Modulo Integrativo: Parent Training (Richiamo Cromatico: Azzurro / Lettera A) -->
-                <div class="service-card card-blue">
-                        <h3>Parent Training e Supporto</h3>
-                        <p>Incontri sistematici di affiancamento per i genitori, finalizzati a trasferire strategie comportamentali efficaci nella quotidianità e a condividere gli obiettivi.</p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-<!-- ==========================================================================
-     9. SEZIONE CONTATTI E SEDE (#contatti)
-     ========================================================================== -->
-
-<!-- index.html - Sezione Contatti a 3 Schede Simmetriche -->
-<section id="contatti" class="contact-section">
-  <div class="container">
-    
-    <!-- Intestazione di Sezione -->
-    <div class="contact-header">
-      <h2>Contatti e Sede</h2>
-      <p class="contact-intro">
-        Per richiedere un primo colloquio conoscitivo o informazioni sui percorsi ABA e sulle consulenze cliniche.
-      </p>
-    </div>
-
-    <!-- Contenitore a 3 Colonne -->
-    <div class="contact-cards-wrapper three-columns">
-      
-      <!-- Scheda 1: Attività sul Territorio -->
-      <div class="info-card info-card-blue">
-        <div class="info-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/>
-            <line x1="8" y1="2" x2="8" y2="18"/>
-            <line x1="16" y1="6" x2="16" y2="22"/>
-          </svg>
-        </div>
-        <div class="info-text">
-          <h3>Attività sul Territorio</h3>
-          <p>Consulenze, parent training e supporto scolastico attivi su Brescia e provincia.</p>
-        </div>
-      </div>
-
-      <!-- Scheda 2: Terapie in Studio -->
-      <div class="info-card info-card-blue">
-        <div class="info-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-            <circle cx="12" cy="10" r="3"/>
-          </svg>
-        </div>
-        <div class="info-text">
-          <h3>Terapie in Studio</h3>
-          <p>Trattamenti individuali in sede:</p>
-          <a href="https://maps.google.com/?q=Via+San+Polo+264+25124+Brescia" target="_blank" rel="noopener noreferrer" class="map-link">
-            Via San Polo 264, Brescia ↗
-          </a>
-        </div>
-      </div>
-
-      <!-- Scheda 3: Contatto Diretto Email -->
-      <div class="info-card info-card-pesca">
-        <div class="info-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect width="20" height="16" x="2" y="4" rx="2"/>
-            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-          </svg>
-        </div>
-        <div class="info-text">
-          <h3>Scrivi allo Studio</h3>
-          <p>Per informazioni o un primo colloquio:</p>
-          <a href="mailto:info@pescastudio.it" class="contact-email-link">info@pescastudio.it</a>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-    <!-- Footer Semantico: pie di pagina con contatti e note legali -->
-    <footer class="footer">
-        <div class="container footer-content">
-            
-            <!-- Blocco Contatti Diretti -->
-            <div class="footer-info">
-                <!-- Link mailto: apre direttamente il client di posta predefinito dell'utente -->
-                <p><strong>Email:</strong> <a href="mailto:info@pescastudio.it" class="contact-email-link">info@pescastudio.it</a></p>
-                <!-- Indirizzo dello studio clinico -->
-                <p><strong>Sede:</strong> Via San Polo 264, 25124 Brescia (BS)</p>
-                <!-- P.IVA: -->
-                <p><strong>P.IVA:</strong> 04097480984</p>
-            </div>
-
-            <!-- Note sul Copyright -->
-            <div class="footer-copy">
-                <!-- &copy; genera il simbolo grafico © -->
-                <p>&copy; 2026 Studio PESCA - Dott.ssa Nadia Bandera. Tutti i diritti riservati.</p>
-            </div>
-
-        </div>
-    </footer>
+<!-- Loader JS: esegue la scansione degli attributi data-include per inserire i frammenti HTML -->
+  <script src="js/components.js"></script>
 
 </body>
 </html>

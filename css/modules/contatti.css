@@ -1,0 +1,154 @@
+/* ==========================================================================
+   9. SEZIONE CONTATTI (#contatti) - Versione Pulita e Ottimizzata
+   ========================================================================== */
+
+.contact-section {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+/* Header di Sezione */
+.contact-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+.contact-header h2 {
+  font-size: 2.2rem;
+  color: var(--color-blue);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.contact-intro {
+  font-size: 1.15rem;
+  color: var(--text-dark);
+}
+
+/* --------------------------------------------------------------------------
+   GRIGLIA CONTENITORE (Mobile: 1 colonna | Desktop >= 768px: 3 colonne)
+   -------------------------------------------------------------------------- */
+
+.contact-cards-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .contact-cards-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   STRUTTURA BASE SCHEDA INFO
+   -------------------------------------------------------------------------- */
+
+.info-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  height: 100%;
+  background-color: #ffffff;
+  border: 1px solid rgba(44, 62, 80, 0.08);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(44, 62, 80, 0.18);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Box Icona Vettoriale */
+.info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 6px;
+}
+
+.info-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+}
+
+/* Tipografia Interna */
+.info-text h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text-dark);
+}
+
+.info-text p {
+  font-size: 0.95rem;
+  margin: 0;
+  color: var(--text-dark);
+}
+
+/* --------------------------------------------------------------------------
+   VARIANTI CROMATICHE
+   -------------------------------------------------------------------------- */
+
+/* VARIANTE GREEN: Attività sul Territorio */
+.info-card-green .info-icon {
+  background-color: rgba(144, 183, 125, 0.15);
+  color: var(--color-green);
+}
+
+.info-card-green .highlight-location {
+  color: var(--color-green);
+  font-weight: 700;
+}
+
+/* VARIANTE BLUE: Terapie in Studio */
+.info-card-blue .info-icon {
+  background-color: rgba(91, 125, 177, 0.12);
+  color: var(--color-blue);
+}
+
+.info-card-blue .info-text .map-link {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--color-blue);
+  font-weight: 600;
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+.info-card-blue .info-text .map-link:hover {
+  opacity: 0.75;
+}
+
+/* VARIANTE PESCA/YELLOW: Scrivi allo Studio */
+.info-card-pesca .info-icon {
+  background-color: rgba(232, 138, 120, 0.12);
+  color: var(--color-yellow);
+}
+
+.info-card-pesca .info-text .contact-email-link {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--color-yellow);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+.info-card-pesca .info-text .contact-email-link:hover {
+  opacity: 0.75;
+}

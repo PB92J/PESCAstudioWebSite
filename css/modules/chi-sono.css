@@ -1,0 +1,136 @@
+/* ==========================================================================
+   SEZIONE CHI SONO (#chi-sono)
+   ========================================================================== */
+
+/* Contenitore principale della sezione biografica */
+.about-section {
+    padding: 80px 0;            /* Spaziatura verticale generosa per dividere le sezioni */
+    background-color: var(--white);
+}
+
+/* Layout Flexbox orizzontale a due colonne: foto a sinistra, testo a destra */
+.about-container {
+    display: flex;
+    align-items: center;        /* Allineamento verticale centrato sui baricentri delle due colonne */
+    gap: 50px;                  /* Distanza orizzontale di stacco tra immagine e blocco testo */
+}
+
+/* --------------------------------------------------------------------------
+   COLONNA IMMAGINE PROFESSIONALE
+   -------------------------------------------------------------------------- */
+
+.about-image-wrapper {
+    flex: 1;                    /* Assegna 1 quota dello spazio Flex orizzontale */
+    max-width: 380px;           /* Limite massimo di ingombro orizzontale su Desktop */
+}
+
+.about-image {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;        /* Raggio di curvatura angoli coerente con la UI del sito */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06); /* Ombra morbida di profondità */
+    display: block;
+    object-fit: cover;          /* Preserva le proporzioni del ritratto evitando distorsioni */
+}
+
+/* --------------------------------------------------------------------------
+   COLONNA TESTO E PUNTI DI FORZA
+   -------------------------------------------------------------------------- */
+
+.about-text {
+    flex: 1.5;                  /* Assegna 1.5 quote dello spazio (50% più larga rispetto alla foto) */
+}
+
+.about-text h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.about-text .subtitle {
+    font-size: 1.15rem;
+    color: var(--color-pesca-dark);
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    margin-bottom: 18px;
+    color: var(--text-dark);
+}
+
+/* ==========================================================================
+   PUNTI DI FORZA CON COLORI ALTERNATI (#chi-sono)
+   ========================================================================== */
+
+.about-highlights {
+    list-style: none;
+    margin-top: 25px;
+    padding-left: 0;
+}
+
+/* Struttura base comune della card punto di forza */
+.about-highlights li {
+    position: relative;
+    padding: 12px 15px 12px 20px;
+    margin-bottom: 12px;
+    background-color: var(--bg-light);
+    border-left: 4px solid var(--primary-color); /* Colore di fallback */
+    border-radius: 0 8px 8px 0;
+    font-size: 1.05rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Micro-interazione al passaggio del mouse */
+.about-highlights li:hover {
+    transform: translateX(4px); /* Leggero scostamento a destra */
+}
+
+/* --------------------------------------------------------------------------
+   MAPPATURA COLORI BRAND SUI SINGOLI PUNTI (NTH-CHILD)
+   -------------------------------------------------------------------------- */
+
+/* 1° Punto: Verde/Ottanio Teal */
+.about-highlights li:nth-child(1) {
+    border-left-color: var(--color-teal);
+}
+
+/* 2° Punto: Rosa/Arancio Pesca */
+.about-highlights li:nth-child(2) {
+    border-left-color: var(--color-pesca-dark);
+}
+
+/* 3° Punto: Blu Studio */
+.about-highlights li:nth-child(3) {
+    border-left-color: var(--color-blue);
+}
+
+/* 4° Punto: Viola d'Accento */
+.about-highlights li:nth-child(4) {
+    border-left-color: var(--color-purple);
+}
+
+/* 5° Punto: Verde Salvia */
+.about-highlights li:nth-child(5) {
+    border-left-color: var(--color-green);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE CHI SONO (MOBILE & TABLET < 768px)
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    /* Conversione del layout da orizzontale (2 colonne) a verticale (stack singolo) */
+    .about-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* Riduzione e centratura della foto per la vista smartphone */
+    .about-image-wrapper {
+        max-width: 260px;
+        margin: 0 auto;
+    }
+}

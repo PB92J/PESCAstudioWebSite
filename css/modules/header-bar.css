@@ -1,0 +1,116 @@
+/* ==========================================================================
+   SEZIONE HEADER E NAVIGAZIONE (STICKY NAVBAR)
+   ========================================================================== */
+
+/* Contenitore fisso in alto: rimane visibile durante lo scorrimento della pagina */
+.header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Ombra leggera di stacco dal contenuto sottostante */
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;                              /* Priorità di sovrapposizione massima */
+}
+
+/* Layout Flexbox orizzontale del contenitore interno */
+.nav-container {
+    display: flex;
+    justify-content: space-between;             /* Logo a sinistra, menu di navigazione a destra */
+    align-items: center;                        /* Allineamento verticale centrato */
+    height: auto;                               /* Permette al contenitore di adattarsi dinamicamente */
+    padding: 10px 20px;
+}
+
+/* --------------------------------------------------------------------------
+   LOGO TESTUALE MULTI-COLORE (FREDOKA FONT)
+   -------------------------------------------------------------------------- */
+
+.logo-text {
+    font-family: 'Fredoka', sans-serif;         /* Font arrotondato per la brand identity */
+    font-size: 1.9rem;
+    font-weight: 500;                           /* Peso Medium */
+    color: var(--text-dark);
+    text-decoration: none;                     /* Rimuove la sottolineatura di default */
+    white-space: nowrap;                       /* Impedisce al nome 'Studio PESCA' di spezzarsi su due righe */
+    letter-spacing: 0px;
+    flex-shrink: 0;                            /* Impedisce al browser di schiacciare il logo se lo spazio diminuisce */
+}
+
+/* Assegnazione puntuale dei colori del brand alle singole lettere dell'acronimo PESCA */
+.studio-color { color: var(--color-blue); }
+.p-color      { color: var(--color-pesca-dark); }
+.e-color      { color: var(--color-pesca-dark); }
+.s-color      { color: var(--color-green); }
+.c-color      { color: var(--color-yellow); }
+.a-color      { color: var(--color-purple); }
+
+/* --------------------------------------------------------------------------
+   MENU DI NAVIGAZIONE
+   -------------------------------------------------------------------------- */
+
+.nav-menu ul {
+    display: flex;                             /* Dispone le voci di menu in sequenza orizzontale */
+    list-style: none;                          /* Rimuove i punti elenco della lista <ul> */
+    gap: 30px;                                 /* Spaziatura orizzontale costante tra i link */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 1.1rem;
+    white-space: nowrap;                       /* Impedisce a "Percorsi e Trattamenti" di andare a capo */
+    transition: var(--transition);             /* Transizione fluida definita nelle variabili per l'effetto hover */
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);               /* Cambio colore al passaggio del mouse */
+}
+
+/* Assegnazione colore con riserva sul valore neutro di default */
+.nav-menu a.nav-chisono {
+    color: var(--text-dark, #334155)); /* Viola | Fallback: Testo scuro */
+}
+
+.nav-menu a.nav-percorsi {
+    color: var(--text-dark, #334155);  /* Verde | Fallback: Testo scuro */
+}
+
+.nav-menu a.nav-contatti {
+    color: var(--text-dark, #334155);   /* Azzurro | Fallback: Testo scuro */
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE HEADER (MOBILE & TABLET < 768px)
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    /* Conversione del layout da orizzontale a colonna (logo in alto, menu sulla riga sottostante) */
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;                             /* Spazio verticale tra logo e menu */
+        padding: 12px 10px;
+    }
+
+    /* Adattamento dimensione del logo per schermi stretti */
+    .logo-text {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    /* Distribuzione bilanciata del menu mobile */
+    .nav-menu ul {
+        justify-content: center;
+        align-items: center;
+        gap: 15px;                             /* Riduzione spaziatura per mantenere le voci su un'unica riga */
+        width: 100%;
+    }
+
+    .nav-menu a {
+        font-size: 0.9rem;                      /* Dimensione font ottimizzata per la fruizione touch */
+    }
+}

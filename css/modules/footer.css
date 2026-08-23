@@ -1,0 +1,37 @@
+/* ==========================================================================
+   10. SEZIONE FOOTER (PIÈ DI PAGINA)
+   ========================================================================== */
+
+.footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 40px 0 20px 0;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;         /* Dispone gli elementi in colonna verticale */
+    align-items: center;
+    gap: 20px;                      /* Spaziatura costante tra le sezioni del footer */
+    text-align: center;
+}
+
+.footer-info a {
+    color: var(--color-yellow);     /* Link evidenziati con il colore d'accento giallo */
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.footer-info a:hover {
+    text-decoration: underline;     /* Ripristina la sottolineatura allo stato di hover */
+}
+
+.footer-copy {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    /* Separatore orizzontale vettoriale ottenuto con un bordo superiore semi-trasparente */
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 15px;
+    width: 100%;
+}

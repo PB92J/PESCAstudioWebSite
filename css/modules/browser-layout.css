@@ -1,0 +1,44 @@
+/* ==========================================================================
+   1. RESET BROWSER E SETTAGGI GLOBALI
+   ========================================================================== */
+
+/* Azzera margini e padding nativi, imposta il box-model universale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Attiva lo scorrimento fluido per le ancore interne (#) */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Tipografia e sfondo generale della pagina */
+body {
+    font-family: var(--font-main);
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   2. CONTENITORE STRUTTURALE (LAYOUT CONTAINER)
+   ========================================================================== */
+
+/* Wrapper per centrare il contenuto e limitarne la larghezza massima */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* Adattamento margini container per schermi piccoli */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

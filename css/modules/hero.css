@@ -1,0 +1,74 @@
+/* ==========================================================================
+   SEZIONE HERO (COPERTINA PRINCIPALE)
+   ========================================================================== */
+
+/* Contenitore principale della sezione: layout, sfumatura di sfondo e spaziature */
+.hero {
+    /* Sfondi sfumati: gradiente a 135 gradi dal verde/ottanio chiarissimo al blu tenue */
+    background: linear-gradient(135deg, #f0f7f6 0%, #eef4fb 100%);
+    padding: 60px 0;            /* Spaziatura interna verticale: 60px sopra e sotto, 0 ai lati */
+    text-align: center;         /* Allineamento centrale per tutti gli elementi figli */
+}
+
+/* Wrapper del logo centrale: distanziamento dal testo sottostante */
+.hero-logo-wrapper {
+    margin-bottom: 20px;        /* Spazio di separazione verticale tra il logo e il titolo H1 */
+}
+
+/* Immagine del logo centrale */
+.hero-logo {
+    max-width: 280px;           /* Larghezza massima in ambiente Desktop */
+    width: 100%;                /* Rende l'immagine fluida e scalabile */
+    height: auto;               /* Mantiene le proporzioni originali altezza/larghezza */
+    display: inline-block;
+    
+    /* Fusione colore: elimina visivamente lo sfondo bianco del PNG fondendolo con la sfumatura sotto */
+    mix-blend-mode: multiply;
+}
+
+/* Titolo Principale (H1): Nome dello Studio o Titolo Professionale */
+.hero-content h1 {
+    font-size: 2.5rem;          /* Dimensione carattere Desktop (~40px) */
+    color: var(--primary-color);/* Colore principale da variabile CSS globale */
+    margin-bottom: 10px;        /* Spazio inferiore dal sottotitolo H2 */
+    font-weight: 700;           /* Grassetto marcato */
+}
+
+/* Sottotitolo (H2): Specializzazione o Qualifica Professionale */
+.hero-content h2 {
+    font-size: 1.25rem;         /* Dimensione carattere Desktop (~20px) */
+    color: var(--color-pesca-dark); /* Colore d'accento dalla tavolozza Pesca */
+    font-weight: 600;           /* Semibold */
+    margin-bottom: 16px;        /* Spazio inferiore verso la frase introduttiva */
+}
+
+/* Payoff / Frase Introduttiva */
+.hero-payoff {
+    font-size: 1.1rem;          /* Dimensione testo leggibile (~17.6px) */
+    font-weight: 600;
+    color: var(--text-dark);
+    max-width: 700px;           /* Limita la larghezza massima del paragrafo per ottimizzare la lunghezza riga */
+    margin: 0 auto;             /* Centra il blocco di testo orizzontalmente */
+    line-height: 1.5;           /* Interlinea compatta e leggibile */
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE HERO (MOBILE & TABLET < 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+
+    /* Riduzione proporzionale del logo per schermi smartphone */
+    .hero-logo {
+        max-width: 200px;
+    }
+
+    /* Scalatura del titolo H1 per evitare spezzature di parola indesiderate */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    /* Adattamento del sottotitolo H2 per il layout mobile */
+    .hero-content h2 {
+        font-size: 1.2rem;
+    }
+}
