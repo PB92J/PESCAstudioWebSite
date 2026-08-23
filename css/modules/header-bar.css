@@ -58,10 +58,6 @@
     transition: var(--transition);             /* Transizione fluida definita nelle variabili per l'effetto hover */
 }
 
-.nav-menu a:hover {
-    color: var(--primary-color);               /* Cambio colore al passaggio del mouse */
-}
-
 /* Assegnazione colore con riserva sul valore neutro di default */
 .nav-menu a.nav-chisono {
     color: var(--primary-color, #334155); /* Viola | Fallback: Testo scuro */
@@ -74,6 +70,11 @@
 .nav-menu a.nav-contatti {
     color: var(--primary-color, #334155);   /* Azzurro | Fallback: Testo scuro */
 }
+
+.nav-menu a:hover {
+    color: var(--color-pesca-dark);               /* Cambio colore al passaggio del mouse */
+}
+
 
 /* --------------------------------------------------------------------------
    RESPONSIVE HEADER (MOBILE & TABLET < 768px)
