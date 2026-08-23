@@ -64,7 +64,7 @@
 
 /* Assegnazione colore con riserva sul valore neutro di default */
 .nav-menu a.nav-chisono {
-    color: var(--primary-color, #334155)); /* Viola | Fallback: Testo scuro */
+    color: var(--primary-color, #334155); /* Viola | Fallback: Testo scuro */
 }
 
 .nav-menu a.nav-percorsi {
