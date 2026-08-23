@@ -50,8 +50,8 @@
 
 .about-text .subtitle {
     font-size: 1.15rem;
-    color: var(--color-pesca-dark);
-    font-weight: 600;
+    color: var(--color-blue);
+    font-weight: 700;
     margin-bottom: 25px;
 }
 
@@ -93,27 +93,27 @@
 
 /* 1° Punto: Verde/Ottanio Teal */
 .about-highlights li:nth-child(1) {
-    border-left-color: var(--color-teal);
+    border-left-color: var(--bg-light);
 }
 
 /* 2° Punto: Rosa/Arancio Pesca */
 .about-highlights li:nth-child(2) {
-    border-left-color: var(--color-pesca-dark);
+    border-left-color: var(--bg-light);
 }
 
 /* 3° Punto: Blu Studio */
 .about-highlights li:nth-child(3) {
-    border-left-color: var(--color-blue);
+    border-left-color: var(--bg-light);
 }
 
 /* 4° Punto: Viola d'Accento */
 .about-highlights li:nth-child(4) {
-    border-left-color: var(--color-purple);
+    border-left-color: var(--bg-light);
 }
 
 /* 5° Punto: Verde Salvia */
 .about-highlights li:nth-child(5) {
-    border-left-color: var(--color-green);
+    border-left-color: var(--bg-light);
 }
 
 /* --------------------------------------------------------------------------

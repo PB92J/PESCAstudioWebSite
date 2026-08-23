@@ -71,15 +71,15 @@
 
 /* Assegnazione colore con riserva sul valore neutro di default */
 .nav-menu a.nav-chisono {
-    color: var(--text-dark, #334155)); /* Viola | Fallback: Testo scuro */
+    color: var(--primary-color, #334155); /* Viola | Fallback: Testo scuro */
 }
 
 .nav-menu a.nav-percorsi {
-    color: var(--text-dark, #334155);  /* Verde | Fallback: Testo scuro */
+    color: var(--primary-color, #334155);  /* Verde | Fallback: Testo scuro */
 }
 
 .nav-menu a.nav-contatti {
-    color: var(--text-dark, #334155);   /* Azzurro | Fallback: Testo scuro */
+    color: var(--primary-color, #334155);   /* Azzurro | Fallback: Testo scuro */
 }
 
 /* --------------------------------------------------------------------------

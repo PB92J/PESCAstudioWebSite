@@ -11,13 +11,16 @@
     --color-purple: #9C8CB9;        /* Lilla / Viola Salvia (Lettera C) */
     --color-blue: #7092C0;          /* Azzurro Polvere (Lettera A) */
     --color-blue-light: #B3D8F0;       /* Light Blue solido per sfondi/card */
+    --color-blue-dark: #4A6B9D;        /* Blu Studio / Navy Desaturato */
     --color-pesca: #F8AD9D;        /* Pesca Pastello principale */
     --color-pesca-light: #FFE5D9;  /* Pesca Pastello chiarissimo (sfondi/hover) */
     --color-pesca-dark: #E88A78;    /* Pesca Scuro / Corallo Caldo */
-    --color-slate: #788896;         /* Grigio Ardesia Desaturato
+    --color-slate: #788896;         /* Grigio Ardesia Desaturato */
+    --color-grey-dark: #334155;      /* Grigio Antracite / Slate per testi scuri */
+
 
     /* Allocazione Funzionale dei Colori per l'Interfaccia Utente (UI) */
-    --primary-color: var(--color-blue);    /* Colore primario per titoli e barra header */
+    --primary-color: var(--color-blue-dark);    /* Colore primario per titoli e barra header */
     --primary-hover: #598580;            /* Tonalita scura per stati di hover/pressione */
     --accent-color: var(--color-yellow);   /* Colore ad alto impatto per elementi di conversione */
     --bg-light: #fbfdfb;                 /* Sfondo caldo ad altissima riflettenza per riposo visivo */

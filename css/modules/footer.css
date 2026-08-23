@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .footer {
-    background-color: var(--primary-color);
+    background-color: var(--color-blue);
     color: var(--white);
     padding: 40px 0 20px 0;
     margin-top: 60px;
@@ -18,9 +18,9 @@
 }
 
 .footer-info a {
-    color: var(--color-yellow);     /* Link evidenziati con il colore d'accento giallo */
+    color: var(--color-white);     /* Link evidenziati con il colore d'accento giallo */
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .footer-info a:hover {
