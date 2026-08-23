@@ -100,6 +100,20 @@
 }
 
 /* --------------------------------------------------------------------------
+   TITOLO INTERMEDIO DI STACCO (#Servizi e Attività Correlate)
+   -------------------------------------------------------------------------- */
+
+.services-divider-title {
+    grid-column: 1 / -1; /* Estende il titolo su tutte le colonne della griglia */
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin: 50px 0 50px 0; /* Spaziatura verticale bilanciata */
+}
+
+
+/* --------------------------------------------------------------------------
    MODIFICATORI CROMATICI CARD (Mappatura unificata via variabili CSS)
    -------------------------------------------------------------------------- */
 
@@ -137,4 +151,35 @@
 .service-card.card-grey {
     --card-accent: var(--color-slate, #788896);
     background: linear-gradient(180deg, rgba(120, 136, 150, 0.08) 0%, #ffffff 100%);
+}
+
+/* Modulo Bianco / Neutro */
+.service-card.card-white {
+    --card-accent: var(--text-dark, #2c3e50);
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+    border: 1px solid rgba(44, 62, 80, 0.10); /* Bordo sottile di stacco strutturale */
+}
+
+
+/* --------------------------------------------------------------------------
+   MODULO NEUTRO / SERVIZI CORRELATI
+   -------------------------------------------------------------------------- */
+
+.service-card.card-neutral {
+    --card-accent: var(--color-blue);
+    background: #ffffff;
+    border: 1px solid rgba(44, 62, 80, 0.10);
+    border-top: 4px solid var(--card-accent);
+}
+
+/* 1. Azzurro Avio (Luminoso) */
+.service-card.card-blue-light {
+    --card-accent: #5b92e5;
+    background: linear-gradient(180deg, rgba(91, 146, 229, 0.08) 0%, #ffffff 100%);
+}
+
+/* 3. Blu Cobalto / Desaturato (Profondo) */
+.service-card.card-blue-dark {
+    --card-accent: #4a6fa5;
+    background: linear-gradient(180deg, rgba(74, 111, 165, 0.08) 0%, #ffffff 100%);
 }

@@ -36,13 +36,6 @@
     flex-shrink: 0;                            /* Impedisce al browser di schiacciare il logo se lo spazio diminuisce */
 }
 
-/* Assegnazione puntuale dei colori del brand alle singole lettere dell'acronimo PESCA */
-.studio-color { color: var(--color-blue); }
-.p-color      { color: var(--color-pesca-dark); }
-.e-color      { color: var(--color-pesca-dark); }
-.s-color      { color: var(--color-green); }
-.c-color      { color: var(--color-yellow); }
-.a-color      { color: var(--color-purple); }
 
 /* --------------------------------------------------------------------------
    MENU DI NAVIGAZIONE
@@ -71,7 +64,7 @@
 
 /* Assegnazione colore con riserva sul valore neutro di default */
 .nav-menu a.nav-chisono {
-    color: var(--primary-color, #334155); /* Viola | Fallback: Testo scuro */
+    color: var(--primary-color, #334155)); /* Viola | Fallback: Testo scuro */
 }
 
 .nav-menu a.nav-percorsi {

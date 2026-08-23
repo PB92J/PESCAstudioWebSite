@@ -17,6 +17,7 @@
     --color-pesca-dark: #E88A78;    /* Pesca Scuro / Corallo Caldo */
     --color-slate: #788896;         /* Grigio Ardesia Desaturato */
     --color-grey-dark: #334155;      /* Grigio Antracite / Slate per testi scuri */
+    --color-grey: #64748B;           /* Grigio Neutro Desaturato per testi secondari */
 
 
     /* Allocazione Funzionale dei Colori per l'Interfaccia Utente (UI) */
@@ -34,3 +35,16 @@
     --max-width: 1200px;                 /* Saturazione larghezza contenitore su schermi grandi */
     --transition: all 0.3s ease;         /* Curva di attenuazione per transizioni di stato fluide */
 }
+
+/* ==========================================================================
+   1.1 CLASSI UTILITY CROMATICHE GLOBALI
+   (Da usare su qualsiasi testo/span nel sito, es. logo, titoli, highlight)
+   ========================================================================== */
+
+.studio-color { color: var(--color-blue); }
+.p-color      { color: var(--color-pesca-dark); }
+.e-color      { color: var(--color-pesca-dark); }
+.s-color      { color: var(--color-green); }
+.c-color      { color: var(--color-yellow); }
+.a-color      { color: var(--color-purple); }
+.consulenza-color { color: var(--color-grey-dark); }
