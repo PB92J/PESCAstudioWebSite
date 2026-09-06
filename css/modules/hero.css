@@ -17,7 +17,7 @@
 
 /* Immagine del logo centrale */
 .hero-logo {
-    max-width: 380px;           /* Larghezza massima in ambiente Desktop */
+    max-width: 480px;           /* Larghezza massima in ambiente Desktop */
     width: 100%;                /* Rende l'immagine fluida e scalabile */
     height: auto;               /* Mantiene le proporzioni originali altezza/larghezza */
     display: inline-block;
@@ -37,7 +37,7 @@
 /* Sottotitolo (H2): Specializzazione o Qualifica Professionale */
 .hero-content h2 {
     font-size: 1.1rem;         /* Dimensione carattere Desktop (~20px) */
-    color: var(--color-blue); /* Colore d'accento dalla tavolozza Pesca */
+    color: var(--color-blue-base2); /* Colore d'accento dalla tavolozza Pesca */
     font-weight: 600;           /* Semibold */
     margin-bottom: 16px;        /* Spazio inferiore verso la frase introduttiva */
 }

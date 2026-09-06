@@ -72,7 +72,7 @@
 }
 
 .nav-menu a:hover {
-    color: var(--color-pesca-dark);               /* Cambio colore al passaggio del mouse */
+    color: var(--color-coral-base);               /* Cambio colore al passaggio del mouse */
 }
 
 

@@ -4,14 +4,51 @@
 
 /*   Le variabili qui definite sono costanti globali ereditate da tutti i componenti. */
 :root {
+
+
+   /* COLORE 1: BLU STUDIO / NAVY (#2D4B6E) */
+    --color-blue-light: #e4eaf1; /* Sfondo chiaro per elementi selezionati o card */
+    --color-blue-base2: #406694; /* Blu Avio Intermedio - Ottimizzato per container slide/card */
+    --color-blue-base:  #2d4b6e; /* Colore originale dell'immagine (Struttura/Header) */
+    --color-blue-dark:  #1b2f46; /* Tonalità scura per contrasto o testi su sfondi chiari */
+
+    /* COLORE 2: VERDE OTTANIO / DESATURATO (#629894) */
+    --color-teal-light: #d8e6e4;        /* Sfondo tenue per badge e categorie */
+    --color-teal-base:  #629894;        /* Colore originale dell'immagine */
+    --color-teal-dark:  #3f6865;        /* Tonalità scura per hover o bordi */
+
+    /* COLORE 3: CORALLO / SALMONE (#E78B77) */
+    --color-coral-light: #fadcd5;       /* Sfondo soft per evidenziazioni */
+    --color-coral-base:  #e78b77;       /* Colore originale dell'immagine (Call-To-Action) */
+    --color-coral-dark:  #b85540;       /* Stato hover/pressione per i pulsanti */
+
+    /* COLORE 4: VIOLA POLVERE (#8E82B3) */
+    --color-purple-light: #e2def0;      /* Tinta tenue per sfondi secondari */
+    --color-purple-base:  #8e82b3;      /* Colore originale dell'immagine */
+    --color-purple-dark:  #5b507e;      /* Dettagli tipografici ad alto contrasto */
+
+    /* COLORE 5: AMBRA / GIALLO CALDO (#F0A95A) */
+    --color-amber-light: #fcead2;       /* Sfondo per avvisi e badge */
+    --color-amber-base:  #f0a95a;       /* Colore originale dell'immagine */
+    --color-amber-dark:  #b87322;       /* Stato di hover per elementi d'accento */
+    
+   /* ==========================================================================
+       2. STRUTTURA NEUTRA E TIPOGRAFICA
+       ========================================================================== */
+    --color-grey-light: #f8f9fa;        /* Sfondo generale della pagina */
+    --color-grey-base:  #788896;        /* Grigio ardesia per bordi e divisori */
+    --color-grey-dark:  #1e2d42;        /* Antracite ad alto contrasto per i testi */
+    --color-grey-muted: #64748b;        /* Grigio desaturato per i sottotitoli */
+    --white:            #ffffff;
+
     /* Mappatura Cromatica Vettoriale (Valori esadecimali estratti dal logo) */
-    --color-teal: #6FA39D;          /* Verde Salvia / Ottanio (Lettera P) */
-    --color-green: #90B77D;         /* Verde Mela Pastello (Lettera E) */
-    --color-yellow: #F3B256;        /* Giallo Miele / Arancio Chiaro (Lettera S) */
-    --color-purple: #9C8CB9;        /* Lilla / Viola Salvia (Lettera C) */
-    --color-blue: #7092C0;          /* Azzurro Polvere (Lettera A) */
-    --color-blue-light: #B3D8F0;       /* Light Blue solido per sfondi/card */
-    --color-blue-dark: #4A6B9D;        /* Blu Studio / Navy Desaturato */
+    /*--color-teal: #6FA39D;          /* Verde Salvia / Ottanio (Lettera P) */
+    /*--color-green: #90B77D;         /* Verde Mela Pastello (Lettera E) */
+    /*--color-yellow: #F3B256;        /* Giallo Miele / Arancio Chiaro (Lettera S) */
+    /*--color-purple: #9C8CB9;        /* Lilla / Viola Salvia (Lettera C) */
+    /*--color-blue: #7092C0;          /* Azzurro Polvere (Lettera A) */
+    /*--color-blue-light: #B3D8F0;       /* Light Blue solido per sfondi/card */
+    /*--color-blue-dark: #4A6B9D;        /* Blu Studio / Navy Desaturato */
     --color-pesca: #F8AD9D;        /* Pesca Pastello principale */
     --color-pesca-light: #FFE5D9;  /* Pesca Pastello chiarissimo (sfondi/hover) */
     --color-pesca-dark: #E88A78;    /* Pesca Scuro / Corallo Caldo */
@@ -19,21 +56,41 @@
     --color-grey-dark: #334155;      /* Grigio Antracite / Slate per testi scuri */
     --color-grey: #64748B;           /* Grigio Neutro Desaturato per testi secondari */
 
+      
+
 
     /* Allocazione Funzionale dei Colori per l'Interfaccia Utente (UI) */
-    --primary-color: var(--color-blue-dark);    /* Colore primario per titoli e barra header */
-    --primary-hover: #598580;            /* Tonalita scura per stati di hover/pressione */
-    --accent-color: var(--color-yellow);   /* Colore ad alto impatto per elementi di conversione */
-    --bg-light: #fbfdfb;                 /* Sfondo caldo ad altissima riflettenza per riposo visivo */
-    --text-dark: #334155;                /* Antracite/Slate per il massimo contrasto del testo */
-    --text-muted: #64748b;               /* Grigio neutro desaturato per i sottotitoli */
-    --white: #ffffff;                    /* Bianco puro */
+    /* --primary-color: var(--color-blue-dark);    /* Colore primario per titoli e barra header */
+    /* --primary-hover: #598580;            /* Tonalita scura per stati di hover/pressione */
+    /* --accent-color: var(--color-yellow);   /* Colore ad alto impatto per elementi di conversione */
+    /* --bg-light: #fbfdfb;                 /* Sfondo caldo ad altissima riflettenza per riposo visivo */
+    /* --text-dark: #334155;                /* Antracite/Slate per il massimo contrasto del testo */
+    /* --text-muted: #64748b;               /* Grigio neutro desaturato per i sottotitoli */
+    /* --white: #ffffff;                    /* Bianco puro */
+    
+
+   /* ==========================================================================
+       3. ASSEGNAZIONE FUNZIONALE PER INTERFACCIA UTENTE (UI Mapping)
+       ========================================================================== */
+    --primary-color:  var(--color-blue-base); /* Colore primario per header e titoli */
+    --primary-hover:  var(--color-blue-dark); /* Stato hover elementi primari */
+
+    --accent-color:   var(--color-coral-base);       /* Colore pulsanti d'azione (CTA) */
+    --accent-hover:   var(--color-coral-dark);       /* Stato hover pulsanti CTA */
+
+    --bg-light:       var(--color-grey-light);        /* Sfondo pagina principale */
+    --bg-card:        var(--white);                  /* Sfondo schede operative */
+
+    --text-dark:      var(--color-grey-dark);         /* Testo corpo principale (Leggibile) */
+    --text-muted:     var(--color-grey-muted);        /* Sottotitoli e dettagli */
+
     
     /* Configurazione Parametri Tipografici e Geometrici */
-    --font-main: 'Quicksand', sans-serif; /* Applicazione di Quicksand per corpo testo e titoli */
-    /*--font-main: 'Comic Neue', cursive, sans-serif; /* Fallback su font generici se CDN offline */
-    --max-width: 1200px;                 /* Saturazione larghezza contenitore su schermi grandi */
-    --transition: all 0.3s ease;         /* Curva di attenuazione per transizioni di stato fluide */
+    --font-main: 'Montserrat', sans-serif; /* Applicazione del font geometrico per corpo e titoli */
+    --max-width: 1200px;                  /* Saturazione larghezza massima del contenitore su schermi grandi */
+    --transition: all 0.3s ease;          /* Curva di attenuazione per transizioni di stato fluide */
+
+
 }
 
 /* ==========================================================================
@@ -41,10 +98,10 @@
    (Da usare su qualsiasi testo/span nel sito, es. logo, titoli, highlight)
    ========================================================================== */
 
-.studio-color { color: var(--color-blue); }
-.p-color      { color: var(--color-pesca-dark); }
-.e-color      { color: var(--color-pesca-dark); }
-.s-color      { color: var(--color-green); }
-.c-color      { color: var(--color-yellow); }
-.a-color      { color: var(--color-purple); }
+.studio-color { color: var(--color-blue-base2); }
+.p-color      { color: var(--color-coral-base); }
+.e-color      { color: var(--color-coral-base); }
+.s-color      { color: var(--color-purple-base); }
+.c-color      { color: var(--color-amber-base); }
+.a-color      { color: var(--color-teal-base); }
 .consulenza-color { color: var(--color-blue-dark); }

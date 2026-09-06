@@ -17,7 +17,7 @@
 
 .services-header h2 {
     font-size: 2.2rem;
-    color: var(--color-pesca-dark);
+    color: var(--color-coral-base);
     margin-bottom: 15px;
     font-weight: 700;
 }
@@ -107,7 +107,7 @@
     grid-column: 1 / -1; /* Estende il titolo su tutte le colonne della griglia */
     text-align: center;
     font-size: 1.6rem;
-    color: var(--primary-color);
+    color: var(--color-blue-base);
     font-weight: 700;
     margin: 50px 0 50px 0; /* Spaziatura verticale bilanciata */
 }
@@ -119,19 +119,19 @@
 
 /* Modulo Lilla / Viola */
 .service-card.card-purple {
-    --card-accent: var(--color-purple, #9c8cb9);
+    --card-accent: var(--color-purple-base, #9c8cb9);
     background: linear-gradient(180deg, rgba(156, 140, 185, 0.08) 0%, #ffffff 100%);
 }
 
 /* Modulo Giallo Miele */
 .service-card.card-yellow {
-    --card-accent: var(--color-yellow, #f3b256);
+    --card-accent: var(--color-amber-base, #f3b256);
     background: linear-gradient(180deg, rgba(243, 178, 86, 0.08) 0%, #ffffff 100%);
 }
 
 /* Modulo Verde Mela */
 .service-card.card-green {
-    --card-accent: var(--color-green, #90b77d);
+    --card-accent: var(--color-teal-base, #90b77d);
     background: linear-gradient(180deg, rgba(144, 183, 125, 0.08) 0%, #ffffff 100%);
 }
 
@@ -143,13 +143,13 @@
 
 /* Modulo Azzurro Polvere */
 .service-card.card-blue {
-    --card-accent: var(--color-blue, #7092c0);
+    --card-accent: var(--color-blue-base,#2d4b6e);
     background: linear-gradient(180deg, rgba(112, 146, 192, 0.08) 0%, #ffffff 100%);
 }
 
 /* Modulo Grigio Ardesia (Neutra) */
 .service-card.card-grey {
-    --card-accent: var(--color-slate, #788896);
+    --card-accent: var(--color-grey-base, #788896);
     background: linear-gradient(180deg, rgba(120, 136, 150, 0.08) 0%, #ffffff 100%);
 }
 
@@ -165,22 +165,16 @@
    MODULO NEUTRO / SERVIZI CORRELATI
    -------------------------------------------------------------------------- */
 
-.service-card.card-neutral {
-    --card-accent: var(--color-blue);
-    background: #ffffff;
-    border: 1px solid rgba(44, 62, 80, 0.10);
-    border-top: 4px solid var(--card-accent);
-}
 
 /* 1. Azzurro Avio (Luminoso) */
 .service-card.card-blue-light {
-    --card-accent: #5b92e5;
+    --card-accent: var(--color-blue-base2, #406694);
     background: linear-gradient(180deg, rgba(91, 146, 229, 0.08) 0%, #ffffff 100%);
 }
 
 /* 3. Blu Cobalto / Desaturato (Profondo) */
 .service-card.card-blue-dark {
-    --card-accent: #4a6fa5;
+    --card-accent: var(--color-blue-dark, #1b2f46);
     background: linear-gradient(180deg, rgba(74, 111, 165, 0.08) 0%, #ffffff 100%);
 }
 
