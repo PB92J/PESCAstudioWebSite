@@ -2,107 +2,97 @@
    SEZIONE HERO (COPERTINA PRINCIPALE)
    ========================================================================== */
 
-/* Contenitore principale della sezione: layout, sfumatura di sfondo e spaziature */
+/* Contenitore principale della sezione Hero */
 .hero {
-    /* Sfondi sfumati: gradiente a 135 gradi dal verde/ottanio chiarissimo al blu tenue */
     background: linear-gradient(135deg, #f0f7f6 0%, #eef4fb 100%);
-    padding: 60px 20px;         /* Spaziatura interna: 60px sopra/sotto, 20px ai lati per mobile */
-    text-align: center;         /* Allineamento centrale per tutti gli elementi figli */
+    padding: 60px 20px;
+    text-align: center;
+    width: 100%;
 }
 
-/* Wrapper del logo centrale: distanziamento dal resto dei contenuti */
+/* Contenitore logo e immagine del brand */
 .hero-logo-wrapper {
-    margin-bottom: 24px;        /* Spazio di separazione verticale tra il logo e la linea divisoria */
+    margin-bottom: 24px;
 }
 
-/* Immagine del logo centrale */
 .hero-logo {
-    max-width: 680px;           /* Larghezza massima in ambiente Desktop */
-    width: 100%;                /* Rende l'immagine fluida e scalabile */
-    height: auto;               /* Mantiene le proporzioni originali altezza/larghezza */
+    max-width: 680px;
+    width: 100%;
+    height: auto;
     display: inline-block;
-    
-    /* Fusione colore: elimina visivamente lo sfondo bianco del PNG fondendolo con la sfumatura sotto */
-    mix-blend-mode: multiply;
+    mix-blend-mode: multiply; /* Elimina visivamente lo sfondo bianco del PNG */
 }
 
-/* Linea divisoria grafica per staccare il logo dall'identità professionale */
+/* Divisore grafico di separazione */
 .hero-divider {
     border: 0;
     height: 2px;
-    width: 60px;                /* Dimensione contenuta per un effetto discreto ed elegante */
-    background-color: var(--p-color, #6ca0dc); /* Colore d'accento del brand */
-    margin: 0 auto 32px auto;   /* Centrato orizzontalmente con 32px di spazio sotto */
+    width: 60px;
+    background-color: var(--p-color, #6ca0dc);
+    margin: 0 auto 32px auto;
     border-radius: 2px;
     opacity: 0.6;
 }
 
-/* Titolo Principale (H1): Nome Professionale */
-.hero-content h1 {
-    font-family: var(--font-main, 'Montserrat', sans-serif); /* Forza Montserrat */
-    font-size: 2.1rem;          /* Dimensione carattere Desktop (~33px) */
-    color: var(--primary-color);/* Colore principale da variabile CSS globale */
-    margin-bottom: 8px;         /* Spazio inferiore dal sottotitolo H2 */
-    font-weight: 700;           /* Grassetto marcato per autorevolezza */
-    line-height: 1.25;
+/* Wrapper dell'identità professionale */
+.profile-hero {
+    max-width: 680px;
+    margin: 0 auto;
 }
 
-/* Sottotitolo (H2): Specializzazione o Qualifica Professionale (SEO target) */
-.hero-content h2 {
-    font-family: var(--font-main, 'Montserrat', sans-serif); /* Forza Montserrat */
-    font-size: 1.15rem;         /* Dimensione carattere Desktop (~18.5px) */
-    color: var(--color-blue-base2); /* Colore d'accento dalla tavolozza Pesca */
-    font-weight: 600;           /* Semibold */
-    margin-bottom: 20px;        /* Spazio inferiore verso la frase introduttiva */
-    line-height: 1.4;
-}
-
-/* Descrizione sintetica dei servizi */
-.hero-payoff {
+/* Titolo H1: Nome Professionale */
+.doctor-title {
     font-family: var(--font-main, 'Montserrat', sans-serif);
-    font-size: 1rem;            /* Dimensione testo leggibile (~16px) */
-    font-weight: 400;           /* Regular per non appesantire il blocco */
-    color: var(--text-dark);
-    max-width: 680px;           /* Limita la larghezza massima per una lunghezza riga ottimale */
-    margin: 0 auto;             /* Centra il blocco di testo orizzontalmente */
-    line-height: 1.6;           /* Interlinea che favorisce la leggibilità */
+    font-size: 2.1rem;
+    color: var(--primary-color, #1e3a8a);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 8px;
 }
 
-/* --- Adattamento Responsive Mobile --- */
+/* Titolo H2: Qualifiche Professionale per posizionamento SEO */
+.doctor-subtitle {
+    font-family: var(--font-main, 'Montserrat', sans-serif);
+    font-size: 1.15rem;
+    color: var(--color-blue-base2, #3b82f6);
+    font-weight: 600;
+    line-height: 1.4;
+     margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+/* Paragrafo Descrizione Servizi */
+.doctor-description {
+    font-family: var(--font-main, 'Montserrat', sans-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-dark, #334155);
+    line-height: 1.6;
+    margin: 0 auto;
+    text-wrap: balance; /* Bilancia la distribuzione delle righe ed evita parole isolatamente a capo */
+}
+
+/* ==========================================================================
+   ADATTAMENTO RESPONSIVE MOBILE (< 768px)
+   ========================================================================== */
 @media (max-width: 768px) {
     .hero {
         padding: 40px 16px;
     }
+
     .hero-logo {
-        max-width: 100%;        /* Adatta il logo a schermi piccoli */
+        max-width: 280px;
     }
-    .hero-content h1 {
-        font-size: 1.65rem;     /* Riduce leggermente l'H1 su smartphone */
+
+    .doctor-title {
+        font-size: 1.65rem;
     }
-    .hero-content h2 {
+
+    .doctor-subtitle {
         font-size: 1rem;
     }
-}
 
-
-
-/* --------------------------------------------------------------------------
-   RESPONSIVE HERO (MOBILE & TABLET < 768px)
-   -------------------------------------------------------------------------- */
-@media (max-width: 768px) {
-
-    /* Riduzione proporzionale del logo per schermi smartphone */
-    .hero-logo {
-        max-width: 200px;
-    }
-
-    /* Scalatura del titolo H1 per evitare spezzature di parola indesiderate */
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    /* Adattamento del sottotitolo H2 per il layout mobile */
-    .hero-content h2 {
-        font-size: 1.2rem;
+    .doctor-description {
+        font-size: 0.95rem;
     }
 }
