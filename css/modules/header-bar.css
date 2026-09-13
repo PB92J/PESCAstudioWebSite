@@ -109,14 +109,44 @@
 
     /* Distribuzione bilanciata del menu mobile */
     .nav-menu ul {
-        justify-content: center;
+        justify-content: flex-start;              /* Mostra sempre la prima voce e lascia intuire lo scorrimento. */
         align-items: center;
-        gap: 8px 15px;                         /* Spaziatura compatta tra righe e voci */
+        flex-wrap: nowrap;                       /* Mantiene tutte le voci su una sola riga. */
+        gap: 8px 15px;                           /* Spaziatura compatta tra le voci. */
+        min-width: max-content;                  /* Impedisce alle voci di restringersi o andare a capo. */
+        padding-right: 30px;                     /* Lascia visibile spazio dopo l'ultima voce. */
+    }
+
+    .nav-menu {
+        position: relative;                      /* Permette di posizionare l'indizio sul bordo destro. */
         width: 100%;
+        max-width: 100%;
+        overflow-x: auto;                        /* Abilita lo scorrimento orizzontale touch. */
+        scrollbar-width: none;                   /* Nasconde la scrollbar su Firefox. */
+        -webkit-overflow-scrolling: touch;       /* Rende più naturale lo scorrimento su iOS. */
+    }
+
+    .nav-menu::-webkit-scrollbar {
+        display: none;                           /* Nasconde la scrollbar su Chrome, Edge e Safari. */
+    }
+
+    .nav-menu::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 28px;
+        pointer-events: none;                    /* Non blocca il trascinamento del menu. */
+        background: linear-gradient(90deg, transparent, var(--white));
     }
 
     .nav-menu a {
         font-size: 0.9rem;                      /* Dimensione font ottimizzata per la fruizione touch */
         line-height: 1.2;                       /* Mantiene compatte le righe del menu quando vanno a capo. */
+        white-space: nowrap;                    /* Mostra ogni voce interamente durante lo scorrimento. */
+        min-height: 44px;                       /* Mantiene una superficie touch accessibile. */
+        display: inline-flex;
+        align-items: center;
     }
 }
