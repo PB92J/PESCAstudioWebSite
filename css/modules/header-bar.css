@@ -25,15 +25,24 @@
    LOGO TESTUALE MULTI-COLORE (FREDOKA FONT)
    -------------------------------------------------------------------------- */
 
+/* Styling principale del contenitore logo */
 .logo-text {
-    font-family: 'Fredoka', sans-serif;         /* Font arrotondato per la brand identity */
+    font-family: 'Grandstander', cursive, sans-serif; /* Font per il brand PeSCA */
     font-size: 1.9rem;
-    font-weight: 500;                           /* Peso Medium */
+    font-weight: 600;                                 /* Peso Medium per PeSCA */
     color: var(--text-dark);
-    text-decoration: none;                     /* Rimuove la sottolineatura di default */
-    white-space: nowrap;                       /* Impedisce al nome 'Studio PESCA' di spezzarsi su due righe */
+    text-decoration: none;                            /* Rimuove la sottolineatura di default */
+    white-space: nowrap;                              /* Impedisce al logo di spezzarsi su due righe */
     letter-spacing: 0px;
-    flex-shrink: 0;                            /* Impedisce al browser di schiacciare il logo se lo spazio diminuisce */
+    flex-shrink: 0;                                   /* Impedisce al browser di schiacciare il logo */
+}
+
+/* Override specifico per la componente "studio" */
+.logo-text .studio-color {
+    font-family: var(--font-main);                    /* Eredita Montserrat definito nelle variabili */
+    font-weight: 501;                                 /* Peso Regular per bilanciare il contrasto con PeSCA */
+    margin-left: 0.35rem;                             /* Distanziamento orizzontale relativo tra le due parti */
+    font-size: 0.85em;                                /* Proporziona leggermente la dimensione rispetto a PeSCA */
 }
 
 

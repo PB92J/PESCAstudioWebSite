@@ -2,25 +2,34 @@
    1. RESET BROWSER E SETTAGGI GLOBALI
    ========================================================================== */
 
-/* Azzera margini e padding nativi, imposta il box-model universale */
-* {
+/* Azzera margini, padding e forza il box-model universale su tutti gli elementi */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Attiva lo scorrimento fluido per le ancore interne (#) */
+/* Attiva lo scorrimento fluido e blocca l'overflow orizzontale a livello di radice */
 html {
     scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-/* Tipografia e sfondo generale della pagina */
+/* Tipografia, sfondo e vincolo di larghezza per evitare autoscaling parassita */
 body {
     font-family: var(--font-main);
     color: var(--text-dark);
     background-color: var(--bg-light);
     line-height: 1.6;
     font-size: 1.1rem;
+    max-width: 100%;
+    min-height: 100vh;           /* Garantisce che il body copra almeno l'intero schermo senza bloccarlo */
+    min-height: 100dvh;          /* Usa il Dynamic Viewport Height per gestire correttamente la barra browser mobile */
+    overflow-x: hidden;          /* Contiene eventuali sbordamenti orizzontali lasciando libero lo scroll Y */
+    position: relative;          /* Previene comportamenti di stacking contestuale errati */
 }
 
 /* ==========================================================================
@@ -35,7 +44,7 @@ body {
     width: 100%;
 }
 
-/* Adattamento margini container per schermi piccoli */
+/* Adattamento margini container per schermi piccoli (mobile) */
 @media (max-width: 768px) {
     .container {
         padding-left: 15px;

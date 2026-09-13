@@ -24,7 +24,8 @@
 
     /* COLORE 4: VIOLA POLVERE (#8E82B3) */
     --color-purple-light: #e2def0;      /* Tinta tenue per sfondi secondari */
-    --color-purple-base:  #8e82b3;      /* Colore originale dell'immagine */
+    /*--color-purple-base:  #8e82b3;      /* Colore originale dell'immagine */
+    --color-purple-base:  #7389C4;
     --color-purple-dark:  #5b507e;      /* Dettagli tipografici ad alto contrasto */
 
     /* COLORE 5: AMBRA / GIALLO CALDO (#F0A95A) */

@@ -106,11 +106,11 @@
 /* VARIANTE GREEN: Attività sul Territorio */
 .info-card-green .info-icon {
   background-color: rgba(144, 183, 125, 0.15);
-  color: var(--color-green);
+  color: var(--color-teal-base);
 }
 
 .info-card-green .highlight-location {
-  color: var(--color-green);
+  color: var(--color-teal-base);
   font-weight: 700;
   font-size: 1rem;
 }
@@ -118,13 +118,13 @@
 /* VARIANTE BLUE: Terapie in Studio */
 .info-card-blue .info-icon {
   background-color: rgba(91, 125, 177, 0.12);
-  color: var(--color-blue);
+  color: var(--color-blue-base2);
 }
 
 .info-card-blue .info-text .map-link {
   display: inline-block;
   margin-top: 6px;
-  color: var(--color-blue);
+  color: var(--color-blue-base2);
   font-weight: 600;
   font-size: 1rem;
   text-decoration: underline;
@@ -138,13 +138,13 @@
 /* VARIANTE PESCA/YELLOW: Scrivi allo Studio */
 .info-card-pesca .info-icon {
   background-color: rgba(232, 138, 120, 0.12);
-  color: var(--color-pesca);
+  color: var(--color-coral-base);
 }
 
 .info-card-pesca .info-text .contact-email-link {
   display: inline-block;
   margin-top: 6px;
-  color: var(--color-pesca);
+  color: var(--color-coral-base);
   font-weight: 700;
   font-size: 1rem;
   text-decoration: underline;

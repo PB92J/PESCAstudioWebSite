@@ -106,9 +106,9 @@
 .services-divider-title {
     grid-column: 1 / -1; /* Estende il titolo su tutte le colonne della griglia */
     text-align: center;
-    font-size: 1.6rem;
-    color: var(--color-blue-base);
-    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    font-weight: 600;
     margin: 50px 0 50px 0; /* Spaziatura verticale bilanciata */
 }
 
