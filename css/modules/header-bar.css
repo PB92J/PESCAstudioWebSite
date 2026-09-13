@@ -96,7 +96,7 @@
     .nav-container {
         flex-direction: column;
         align-items: center;
-        gap: 12px;                             /* Spazio verticale tra logo e menu */
+        gap: 4px;                              /* Riduce lo spazio tra logo e menu sui dispositivi stretti. */
         padding: 12px 10px;
     }
 
