@@ -130,7 +130,7 @@
     .nav-container {
         flex-direction: column;
         align-items: center;
-        gap: 12px;                               /* Aggiunge respiro verticale tra logo e pulsanti */
+        gap: 8px;                               /* Aggiunge respiro verticale tra logo e pulsanti */
         padding: 12px 10px;
     }
 
