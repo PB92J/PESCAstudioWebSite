@@ -2,4 +2,3 @@
 exclude:
   - Gemfile
   - Gemfile.lock
-  - js/

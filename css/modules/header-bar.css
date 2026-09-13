@@ -21,6 +21,42 @@
     padding: 10px 20px;
 }
 
+/* Centra il menu su desktop lasciando il logo ancorato a sinistra. */
+@media (min-width: 769px) {
+    .nav-container {
+            display: flex;
+            flex-wrap: wrap;          /* Permette lo slittamento su due righe in automatico */
+            justify-content: center;  /* Centra gli elementi quando finiscono su righe diverse */
+            align-items: center;
+            row-gap: 15px;            /* Distanza verticale tra logo e menu quando si impilano */
+        }
+
+        .logo-text {
+            margin-right: auto;       /* Funge da "molla": spinge il menu tutto a destra quando c'è spazio sulla stessa riga */
+        }
+
+        .nav-menu {
+            /* Rimosso il max-width: 500px, ora il blocco è libero di centrarsi orizzontalmente */
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-menu ul {
+            justify-content: center;  /* Assicura che i pulsanti all'interno siano centrati */
+        }
+    
+
+    .nav-container.menu-wrapped .nav-menu {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        justify-self: center;
+    }
+
+    .nav-container.menu-wrapped .nav-menu ul {
+        justify-content: center;
+    }
+}
+
 /* --------------------------------------------------------------------------
     LOGO TESTUALE MULTI-COLORE (GRANDSTANDER FONT)
    -------------------------------------------------------------------------- */
@@ -86,67 +122,78 @@
 }
 
 
-/* --------------------------------------------------------------------------
-   RESPONSIVE HEADER (MOBILE & TABLET < 768px)
-   -------------------------------------------------------------------------- */
-
+/* ==========================================================================
+   RESPONSIVE HEADER - STADIO 1 (TABLET E SMARTPHONE GRANDI < 768px)
+   ========================================================================== */
 @media (max-width: 768px) {
-
-    /* Conversione del layout da orizzontale a colonna (logo in alto, menu sulla riga sottostante) */
+    /* Layout a colonna: logo centrato in alto, menu centrato in basso */
     .nav-container {
         flex-direction: column;
         align-items: center;
-        gap: 0;                                /* Elimina lo spazio extra tra logo e menu sui dispositivi stretti. */
+        gap: 12px;                               /* Aggiunge respiro verticale tra logo e pulsanti */
         padding: 12px 10px;
     }
 
-    /* Adattamento dimensione del logo per schermi stretti */
+    /* Adattamento dimensione del logo */
     .logo-text {
         font-size: 1.6rem;
-        line-height: 1.1;                      /* Riduce l'altezza interna della riga del logo. */
+        line-height: 1.1;
         text-align: center;
     }
 
-    /* Distribuzione bilanciata del menu mobile */
-    .nav-menu ul {
-        justify-content: flex-start;              /* Mostra sempre la prima voce e lascia intuire lo scorrimento. */
-        align-items: center;
-        flex-wrap: nowrap;                       /* Mantiene tutte le voci su una sola riga. */
-        gap: 8px 15px;                           /* Spaziatura compatta tra le voci. */
-        min-width: max-content;                  /* Impedisce alle voci di restringersi o andare a capo. */
-        padding-right: 30px;                     /* Lascia visibile spazio dopo l'ultima voce. */
-    }
-
+    /* Contenitore principale del menu: niente scorrimento laterale in questa fase */
     .nav-menu {
-        position: relative;                      /* Permette di posizionare l'indizio sul bordo destro. */
         width: 100%;
-        max-width: 100%;
-        overflow-x: auto;                        /* Abilita lo scorrimento orizzontale touch. */
-        scrollbar-width: none;                   /* Nasconde la scrollbar su Firefox. */
-        -webkit-overflow-scrolling: touch;       /* Rende più naturale lo scorrimento su iOS. */
+        overflow-x: hidden;                      /* Blocca lo scroll se non necessario */
     }
 
-    .nav-menu::-webkit-scrollbar {
-        display: none;                           /* Nasconde la scrollbar su Chrome, Edge e Safari. */
+    /* Distribuzione dei pulsanti: centrati e liberi di andare su 2 righe */
+    .nav-menu ul {
+        justify-content: center;                 /* Centratura geometrica rispetto all'asse */
+        align-items: center;
+        flex-wrap: wrap;                         /* Consente la discesa sulla seconda riga */
+        gap: 8px 15px;                           /* Spaziatura simmetrica tra i nodi */
+        padding: 0;                              /* Reset per garantire la centratura esatta */
+        width: 100%;
     }
 
-    .nav-menu::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 28px;
-        pointer-events: none;                    /* Non blocca il trascinamento del menu. */
-        background: linear-gradient(90deg, transparent, var(--white));
-    }
-
+    /* Target tattili ottimizzati per mobile */
     .nav-menu a {
-        font-size: 0.9rem;                      /* Dimensione font ottimizzata per la fruizione touch */
-        line-height: 1.2;                       /* Mantiene compatte le righe del menu quando vanno a capo. */
-        white-space: nowrap;                    /* Mostra ogni voce interamente durante lo scorrimento. */
-        min-height: 44px;                       /* Mantiene una superficie touch accessibile. */
+        font-size: 0.9rem;
+        line-height: 1.2;
+        white-space: nowrap;                     /* Impedisce la rottura del testo del singolo pulsante */
+        min-height: 44px;                        /* Altezza minima standard Apple/Google per il touch */
         display: inline-flex;
         align-items: center;
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE HEADER - STADIO 2 (SMARTPHONE PICCOLI < 440px)
+   ========================================================================== */
+@media (max-width: 440px) {
+    /* Il contenitore diventa una finestra di scorrimento orizzontale */
+    .nav-menu {
+        overflow-x: auto;                        /* Attiva il binario di scorrimento touch */
+        scrollbar-width: none;                   /* Nasconde la barra visiva (Firefox) */
+        -webkit-overflow-scrolling: touch;       /* Abilita l'inerzia fluida su iOS */
+        
+        /* FILTRO OTTICO DI DISSOLVENZA (Nero = visibile; Trasparente = invisibile) */
+        /* La dissolvenza parte all'85% della larghezza del contenitore e termina al 100% */
+        -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+        mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    }
+
+    /* Nasconde la barra di scorrimento su Chrome, Edge e Safari */
+    .nav-menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Forza i pulsanti su un'unica riga per evitare il collasso su 3 righe */
+    .nav-menu ul {
+        flex-wrap: nowrap;                       /* Sovrascrive il wrap: costringe tutto sulla riga 1 */
+        justify-content: flex-start;             /* Allinea a sinistra per mostrare l'inizio del menu */
+        min-width: max-content;                  /* Sgancia la larghezza dai limiti dello schermo */
+        padding-right: 40px;                     /* Aumentato il padding per compensare l'area invisibile della dissolvenza */
     }
 }
