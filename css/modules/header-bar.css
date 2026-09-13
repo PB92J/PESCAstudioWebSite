@@ -96,13 +96,14 @@
     .nav-container {
         flex-direction: column;
         align-items: center;
-        gap: 4px;                              /* Riduce lo spazio tra logo e menu sui dispositivi stretti. */
+        gap: 0;                                /* Elimina lo spazio extra tra logo e menu sui dispositivi stretti. */
         padding: 12px 10px;
     }
 
     /* Adattamento dimensione del logo per schermi stretti */
     .logo-text {
         font-size: 1.6rem;
+        line-height: 1.1;                      /* Riduce l'altezza interna della riga del logo. */
         text-align: center;
     }
 
@@ -116,5 +117,6 @@
 
     .nav-menu a {
         font-size: 0.9rem;                      /* Dimensione font ottimizzata per la fruizione touch */
+        line-height: 1.2;                       /* Mantiene compatte le righe del menu quando vanno a capo. */
     }
 }
