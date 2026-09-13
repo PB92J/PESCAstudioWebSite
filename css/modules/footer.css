@@ -18,7 +18,7 @@
 }
 
 .footer-info a {
-    color: var(--color-white);     /* Link evidenziati con il colore d'accento giallo */
+    color: var(--white);
     text-decoration: none;
     font-weight: 500;
 }
@@ -31,7 +31,7 @@
     font-size: 0.9rem;
     opacity: 0.9;
     /* Separatore orizzontale vettoriale ottenuto con un bordo superiore semi-trasparente */
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid var(--color-footer-divider);
     padding-top: 15px;
     width: 100%;
 }

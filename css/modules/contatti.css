@@ -4,7 +4,7 @@
 
 .contact-section {
   padding: 80px 0;
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 /* Header di Sezione */
@@ -19,11 +19,6 @@
   color: var(--primary-color);
   margin-bottom: 15px;
   font-weight: 700;
-}
-
-.contact-intro {
-  font-size: 1.15rem;
-  color: var(--text-dark);
 }
 
 /* --------------------------------------------------------------------------
@@ -55,17 +50,17 @@
   gap: 16px;
   padding: 20px;
   height: 100%;
-  background-color: #ffffff;
-  border: 1px solid rgba(44, 62, 80, 0.08);
+  background-color: var(--white);
+  border: 1px solid var(--color-border-subtle);
   border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 2px 4px var(--color-shadow-minimal);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .info-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(44, 62, 80, 0.18);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-color: var(--color-border-hover);
+  box-shadow: 0 4px 12px var(--color-shadow-soft);
 }
 
 /* Box Icona Vettoriale */
@@ -105,7 +100,7 @@
 
 /* VARIANTE GREEN: Attività sul Territorio */
 .info-card-green .info-icon {
-  background-color: rgba(144, 183, 125, 0.15);
+  background-color: var(--color-teal-icon);
   color: var(--color-teal-base);
 }
 
@@ -117,7 +112,7 @@
 
 /* VARIANTE BLUE: Terapie in Studio */
 .info-card-blue .info-icon {
-  background-color: rgba(91, 125, 177, 0.12);
+  background-color: var(--color-blue-icon);
   color: var(--color-blue-base2);
 }
 
@@ -135,9 +130,9 @@
   opacity: 0.75;
 }
 
-/* VARIANTE PESCA/YELLOW: Scrivi allo Studio */
+/* VARIANTE CORALLO: Scrivi allo Studio */
 .info-card-pesca .info-icon {
-  background-color: rgba(232, 138, 120, 0.12);
+  background-color: var(--color-coral-icon);
   color: var(--color-coral-base);
 }
 

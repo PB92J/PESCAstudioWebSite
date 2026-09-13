@@ -28,7 +28,7 @@
     width: 100%;
     height: auto;
     border-radius: 16px;        /* Raggio di curvatura angoli coerente con la UI del sito */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06); /* Ombra morbida di profondità */
+    box-shadow: 0 10px 25px var(--color-shadow-image); /* Ombra morbida di profondità */
     display: block;
     object-fit: cover;          /* Preserva le proporzioni del ritratto evitando distorsioni */
 }
@@ -88,6 +88,7 @@
     list-style: none;
     margin-top: 25px;
     padding-left: 0;
+    color: var(--color-blue-base);
 }
 
 /* Struttura base comune della card punto di forza */
@@ -112,29 +113,40 @@
    MAPPATURA COLORI BRAND SUI SINGOLI PUNTI (NTH-CHILD)
    -------------------------------------------------------------------------- */
 
+/*
+   Il bordo è invisibile per mantenere una resa più pulita.
+   Per riattivare i colori, sostituire la regola border-left-color attiva
+   di ogni elemento con la relativa regola colorata commentata.
+*/
+
 /* 1° Punto: Verde/Ottanio Teal */
 .about-highlights li:nth-child(1) {
     border-left-color: var(--bg-light);
+    /* border-left-color: var(--color-teal-base); */
 }
 
-/* 2° Punto: Rosa/Arancio Pesca */
+/* 2° Punto: Pesca scuro */
 .about-highlights li:nth-child(2) {
     border-left-color: var(--bg-light);
+    /* border-left-color: var(--color-pesca-dark); */
 }
 
 /* 3° Punto: Blu Studio */
 .about-highlights li:nth-child(3) {
     border-left-color: var(--bg-light);
+    /* border-left-color: var(--color-blue-base); */
 }
 
 /* 4° Punto: Viola d'Accento */
 .about-highlights li:nth-child(4) {
     border-left-color: var(--bg-light);
+    /* border-left-color: var(--color-purple-base); */
 }
 
 /* 5° Punto: Verde Salvia */
 .about-highlights li:nth-child(5) {
     border-left-color: var(--bg-light);
+    /* border-left-color: var(--color-teal-dark); */
 }
 
 /* --------------------------------------------------------------------------

@@ -1,0 +1,5 @@
+# Configurazione minima per GitHub Pages e per il test locale con Jekyll.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - js/

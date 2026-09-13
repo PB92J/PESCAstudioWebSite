@@ -7,83 +7,97 @@
 
 
    /* COLORE 1: BLU STUDIO / NAVY (#2D4B6E) */
-    --color-blue-light: #e4eaf1; /* Sfondo chiaro per elementi selezionati o card */
-    --color-blue-base2: #406694; /* Blu Avio Intermedio - Ottimizzato per container slide/card */
-    --color-blue-base:  #2d4b6e; /* Colore originale dell'immagine (Struttura/Header) */
-    --color-blue-dark:  #1b2f46; /* Tonalità scura per contrasto o testi su sfondi chiari */
+   --color-blue-light: #e4eaf1;        /* Blu chiaro: sfondi selezionati e superfici secondarie. */
+   --color-blue-base2: #406694;        /* Blu avio: footer, link, icone e card dei servizi. */
+   --color-blue-base:  #2d4b6e;        /* Blu studio: titoli, header, testo della navigazione e accenti. */
+   --color-blue-dark:  #1b2f46;        /* Blu scuro: contrasti, card profonde e consulenza. */
 
     /* COLORE 2: VERDE OTTANIO / DESATURATO (#629894) */
-    --color-teal-light: #d8e6e4;        /* Sfondo tenue per badge e categorie */
-    --color-teal-base:  #629894;        /* Colore originale dell'immagine */
-    --color-teal-dark:  #3f6865;        /* Tonalità scura per hover o bordi */
+   --color-teal-light: #d8e6e4;        /* Teal chiaro: sfondi tenui e badge. */
+   --color-teal-base:  #629894;        /* Teal principale: autonomia e attività sul territorio. */
+   --color-teal-dark:  #3f6865;        /* Teal scuro: eventuali hover e bordi. */
 
     /* COLORE 3: CORALLO / SALMONE (#E78B77) */
-    --color-coral-light: #fadcd5;       /* Sfondo soft per evidenziazioni */
-    --color-coral-base:  #e78b77;       /* Colore originale dell'immagine (Call-To-Action) */
-    --color-coral-dark:  #b85540;       /* Stato hover/pressione per i pulsanti */
+   --color-coral-light: #fadcd5;       /* Corallo chiaro: evidenziazioni e sfondi CTA. */
+   --color-coral-base:  #e78b77;       /* Corallo principale: CTA, contatti, hover e titoli servizi. */
+   --color-coral-dark:  #b85540;       /* Corallo scuro: stato hover/pressione delle CTA. */
 
     /* COLORE 4: VIOLA POLVERE (#8E82B3) */
-    --color-purple-light: #e2def0;      /* Tinta tenue per sfondi secondari */
-    /*--color-purple-base:  #8e82b3;      /* Colore originale dell'immagine */
-    --color-purple-base:  #7389C4;
-    --color-purple-dark:  #5b507e;      /* Dettagli tipografici ad alto contrasto */
+   --color-purple-light: #e2def0;      /* Viola chiaro: sfondi secondari. */
+   --color-purple-base:  #7389C4;      /* Viola principale: titolo della card Socialità. */
+   --color-purple-dark:  #5b507e;      /* Viola scuro: dettagli tipografici ad alto contrasto. */
 
     /* COLORE 5: AMBRA / GIALLO CALDO (#F0A95A) */
-    --color-amber-light: #fcead2;       /* Sfondo per avvisi e badge */
-    --color-amber-base:  #f0a95a;       /* Colore originale dell'immagine */
-    --color-amber-dark:  #b87322;       /* Stato di hover per elementi d'accento */
+   --color-amber-light: #fcead2;       /* Ambra chiaro: avvisi, badge e superfici delicate. */
+   --color-amber-base:  #f0a95a;       /* Ambra principale: titolo della card Comunicazione. */
+   --color-amber-dark:  #b87322;       /* Ambra scuro: hover e accenti secondari. */
     
    /* ==========================================================================
        2. STRUTTURA NEUTRA E TIPOGRAFICA
        ========================================================================== */
-    --color-grey-light: #f8f9fa;        /* Sfondo generale della pagina */
-    --color-grey-base:  #788896;        /* Grigio ardesia per bordi e divisori */
-    --color-grey-dark:  #1e2d42;        /* Antracite ad alto contrasto per i testi */
-    --color-grey-muted: #64748b;        /* Grigio desaturato per i sottotitoli */
-    --white:            #ffffff;
+   --color-grey-light: #f8f9fa;        /* Grigio chiaro: sfondo generale e card neutre. */
+   --color-grey-base:  #788896;        /* Grigio ardesia: bordi, divisori e card neutre. */
+   --color-grey-muted: #64748b;        /* Grigio attenuato: sottotitoli e informazioni secondarie. */
+   --white:            #ffffff;        /* Bianco: header, sezioni, card e testo sul footer. */
 
-    /* Mappatura Cromatica Vettoriale (Valori esadecimali estratti dal logo) */
-    /*--color-teal: #6FA39D;          /* Verde Salvia / Ottanio (Lettera P) */
-    /*--color-green: #90B77D;         /* Verde Mela Pastello (Lettera E) */
-    /*--color-yellow: #F3B256;        /* Giallo Miele / Arancio Chiaro (Lettera S) */
-    /*--color-purple: #9C8CB9;        /* Lilla / Viola Salvia (Lettera C) */
-    /*--color-blue: #7092C0;          /* Azzurro Polvere (Lettera A) */
-    /*--color-blue-light: #B3D8F0;       /* Light Blue solido per sfondi/card */
-    /*--color-blue-dark: #4A6B9D;        /* Blu Studio / Navy Desaturato */
-    --color-pesca: #F8AD9D;        /* Pesca Pastello principale */
-    --color-pesca-light: #FFE5D9;  /* Pesca Pastello chiarissimo (sfondi/hover) */
-    --color-pesca-dark: #E88A78;    /* Pesca Scuro / Corallo Caldo */
-    --color-slate: #788896;         /* Grigio Ardesia Desaturato */
-    --color-grey-dark: #334155;      /* Grigio Antracite / Slate per testi scuri */
-    --color-grey: #64748B;           /* Grigio Neutro Desaturato per testi secondari */
+   /* Valori storici del logo non attivi: conservati solo come riferimento cromatico. */
+   /* --color-teal: #6FA39D; --color-green: #90B77D; --color-yellow: #F3B256; */
+   /* --color-purple: #9C8CB9; --color-blue: #7092C0; --color-blue-light: #B3D8F0; */
+   /* --color-blue-dark: #4A6B9D; */
+   --color-pesca: #F8AD9D;        /* Pesca: identità visiva e accenti caldi. */
+   --color-pesca-light: #FFE5D9;  /* Pesca chiaro: sfondi e hover delicati. */
+   --color-pesca-dark: #E88A78;   /* Pesca scuro: accenti e stati attivi. */
+   --color-slate: #788896;         /* Slate: variante neutra per bordi e superfici. */
+   --color-grey-dark: #334155;     /* Grigio scuro: testo principale e titoli. */
+   --color-grey: #64748B;          /* Grigio neutro: testo secondario. */
+
+   /* Colori funzionali: usati dai moduli per superfici, bordi, ombre e trasparenze. */
+   --color-hero-start: #f0f7f6;                       /* Hero: colore iniziale del gradiente. */
+   --color-hero-end: #eef4fb;                         /* Hero: colore finale del gradiente. */
+   --color-border-subtle: rgba(44, 62, 80, 0.08);     /* Card: bordo standard. */
+   --color-border-hover: rgba(44, 62, 80, 0.18);      /* Card contatti: bordo al passaggio. */
+   --color-border-strong: rgba(44, 62, 80, 0.10);     /* Card neutre: bordo più visibile. */
+   --color-shadow-soft: rgba(0, 0, 0, 0.05);          /* Header e card contatti: ombra morbida. */
+   --color-shadow-image: rgba(0, 0, 0, 0.06);         /* Foto profilo: ombra dell'immagine. */
+   --color-shadow-card: rgba(0, 0, 0, 0.04);          /* Card servizi: ombra base. */
+   --color-shadow-card-hover: rgba(0, 0, 0, 0.07);    /* Card servizi: ombra in hover. */
+   --color-shadow-minimal: rgba(0, 0, 0, 0.02);       /* Card: ombra minima. */
+   --color-white-overlay: rgba(255, 255, 255, 0.95);  /* Card servizi: superficie sfumata. */
+   --color-black-overlay: rgba(0, 0, 0, 0.05);        /* Badge: sfondo neutro trasparente. */
+   --color-footer-divider: rgba(255, 255, 255, 0.2);  /* Footer: linea divisoria. */
+   --color-purple-soft: rgba(156, 140, 185, 0.08);    /* Card Socialità: sfondo. */
+   --color-amber-soft: rgba(243, 178, 86, 0.08);      /* Card Comunicazione: sfondo. */
+   --color-teal-soft: rgba(111, 163, 157, 0.08);      /* Card Autonomia: sfondo. */
+   --color-blue-soft: rgba(112, 146, 192, 0.08);      /* Card blu: sfondo. */
+   --color-grey-soft: rgba(120, 136, 150, 0.08);      /* Card grigie: sfondo. */
+   --color-blue-light-soft: rgba(91, 146, 229, 0.08); /* Card ABA: sfondo. */
+   --color-blue-dark-soft: rgba(74, 111, 165, 0.08);  /* Card consulenza: sfondo. */
+   --color-teal-icon: rgba(144, 183, 125, 0.15);      /* Contatti territorio: sfondo icona. */
+   --color-blue-icon: rgba(91, 125, 177, 0.12);       /* Contatti sede: sfondo icona. */
+   --color-coral-icon: rgba(232, 138, 120, 0.12);     /* Contatti email: sfondo icona. */
 
       
 
 
     /* Allocazione Funzionale dei Colori per l'Interfaccia Utente (UI) */
-    /* --primary-color: var(--color-blue-dark);    /* Colore primario per titoli e barra header */
-    /* --primary-hover: #598580;            /* Tonalita scura per stati di hover/pressione */
-    /* --accent-color: var(--color-yellow);   /* Colore ad alto impatto per elementi di conversione */
-    /* --bg-light: #fbfdfb;                 /* Sfondo caldo ad altissima riflettenza per riposo visivo */
-    /* --text-dark: #334155;                /* Antracite/Slate per il massimo contrasto del testo */
-    /* --text-muted: #64748b;               /* Grigio neutro desaturato per i sottotitoli */
-    /* --white: #ffffff;                    /* Bianco puro */
+   /* Mappature funzionali storiche non attive: sostituite dai token qui sotto. */
     
 
    /* ==========================================================================
        3. ASSEGNAZIONE FUNZIONALE PER INTERFACCIA UTENTE (UI Mapping)
        ========================================================================== */
-    --primary-color:  var(--color-blue-base); /* Colore primario per header e titoli */
-    --primary-hover:  var(--color-blue-dark); /* Stato hover elementi primari */
+   --primary-color:  var(--color-blue-base); /* Primario: header, navigazione e titoli principali. */
+   --primary-hover:  var(--color-blue-dark); /* Hover primario: elementi interattivi blu. */
 
-    --accent-color:   var(--color-coral-base);       /* Colore pulsanti d'azione (CTA) */
-    --accent-hover:   var(--color-coral-dark);       /* Stato hover pulsanti CTA */
+   --accent-color:   var(--color-coral-base);       /* Accento: CTA, contatti e divisore hero. */
+   --accent-hover:   var(--color-coral-dark);       /* Hover accento: stato attivo delle CTA. */
+    --focus-color:   var(--color-coral-dark);       /* Focus tastiera: contorno visibile sui controlli. */
 
-    --bg-light:       var(--color-grey-light);        /* Sfondo pagina principale */
-    --bg-card:        var(--white);                  /* Sfondo schede operative */
+   --bg-light:       var(--color-grey-light);        /* Sfondo: body, servizi e punti elenco. */
+   --bg-card:        var(--white);                  /* Schede: superficie base delle card. */
 
-    --text-dark:      var(--color-grey-dark);         /* Testo corpo principale (Leggibile) */
-    --text-muted:     var(--color-grey-muted);        /* Sottotitoli e dettagli */
+   --text-dark:      var(--color-grey-dark);         /* Testo principale: paragrafi e titoli card. */
+   --text-muted:     var(--color-grey-muted);        /* Testo secondario: sottotitoli e dettagli. */
 
     
     /* Configurazione Parametri Tipografici e Geometrici */
@@ -99,10 +113,11 @@
    (Da usare su qualsiasi testo/span nel sito, es. logo, titoli, highlight)
    ========================================================================== */
 
-.studio-color { color: var(--color-blue-base2); }
-.p-color      { color: var(--color-coral-base); }
-.e-color      { color: var(--color-coral-base); }
-.s-color      { color: var(--color-purple-base); }
-.c-color      { color: var(--color-amber-base); }
-.a-color      { color: var(--color-teal-base); }
-.consulenza-color { color: var(--color-blue-dark); }
+/* Colori puntuali per il logo e per le etichette delle aree di intervento. */
+.studio-color { color: var(--color-blue-base2); } /* Logo: parola "studio". */
+.p-color      { color: var(--color-coral-base); } /* Logo: lettera P. */
+.e-color      { color: var(--color-coral-base); } /* Logo: lettera e. */
+.s-color      { color: var(--color-purple-base); } /* Card: Socialità e logo S. */
+.c-color      { color: var(--color-amber-base); } /* Card: Comunicazione e logo C. */
+.a-color      { color: var(--color-teal-base); } /* Card: Autonomia e logo A. */
+.consulenza-color { color: var(--color-blue-dark); } /* Consulenza: testo blu scuro. */

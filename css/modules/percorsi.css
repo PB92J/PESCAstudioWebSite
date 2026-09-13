@@ -45,16 +45,16 @@
 .service-card {
     --card-accent: var(--primary-color);        /* Fallback colore d'accento */
     
-    background-color: #ffffff;
+    background-color: var(--white);
     border-radius: 6px;                         /* Geometria pulita a 6px */
-    border: 1px solid rgba(44, 62, 80, 0.08);   /* Bordo perimetrale neutro */
+    border: 1px solid var(--color-border-subtle);   /* Bordo perimetrale neutro */
     border-top: 4px solid var(--card-accent);   /* Bordo superiore colorato a spessore costante */
     padding: 30px 25px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02), 0 6px 12px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 2px 4px var(--color-shadow-minimal), 0 6px 12px var(--color-shadow-card);
     position: relative;
     
     /* Sfumatura di fondo tenue */
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, #ffffff 100%);
+    background: linear-gradient(180deg, var(--color-white-overlay) 0%, var(--white) 100%);
     
     /* Transizione limitata alle coordinate Z e all'ombra (nessun cambio di quota o dimensione) */
     transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -63,7 +63,7 @@
 /* Effetto Hover Pulito: sollevamento di 4px e aumento morbido dell'ombra */
 .service-card:hover {
     transform: translateY(-4px);                /* Elevazione sull'asse Y */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07); /* Ombra di profondità senza variare i bordi */
+    box-shadow: 0 8px 20px var(--color-shadow-card-hover); /* Ombra di profondità senza variare i bordi */
 }
 
 /* Tipografia interna alle Card */
@@ -80,32 +80,30 @@
     line-height: 1.5;
 }
 
-/* --------------------------------------------------------------------------
-   BADGE DI CATEGORIA (ETICHETTA SUPERIORE)
-   -------------------------------------------------------------------------- */
+/*
+   Classe predisposta ma non utilizzata nell'HTML corrente.
+   Per riattivarla, rimuovere i commenti dal blocco seguente.
 
-.card-badge {
-    display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    padding: 4px 12px;
-    border-radius: 4px;
-    margin-bottom: 15px;
-    
-    /* Applica automaticamente lo sfondo tenue e il testo basandosi sul colore d'accento */
-    background-color: rgba(0, 0, 0, 0.05);
-    color: var(--card-accent);
-}
+   .card-badge {
+       display: inline-block;
+       font-size: 0.8rem;
+       font-weight: 700;
+       text-transform: uppercase;
+       letter-spacing: 0.8px;
+       padding: 4px 12px;
+       border-radius: 4px;
+       margin-bottom: 15px;
+       background-color: var(--color-black-overlay);
+       color: var(--card-accent);
+   }
+*/
 
 /* --------------------------------------------------------------------------
    TITOLO INTERMEDIO DI STACCO (#Servizi e Attività Correlate)
    -------------------------------------------------------------------------- */
 
 .services-divider-title {
-    grid-column: 1 / -1; /* Estende il titolo su tutte le colonne della griglia */
-    text-align: center;
+    text-align: center; /* Il titolo è autonomo rispetto alle griglie delle card. */
     font-size: 1.4rem;
     color: var(--text-dark);
     font-weight: 600;
@@ -119,46 +117,53 @@
 
 /* Modulo Lilla / Viola */
 .service-card.card-purple {
-    --card-accent: var(--color-purple-base, #9c8cb9);
-    background: linear-gradient(180deg, rgba(156, 140, 185, 0.08) 0%, #ffffff 100%);
+    --card-accent: var(--color-purple-base);
+    background: linear-gradient(180deg, var(--color-purple-soft) 0%, var(--white) 100%);
 }
 
 /* Modulo Giallo Miele */
 .service-card.card-yellow {
-    --card-accent: var(--color-amber-base, #f3b256);
-    background: linear-gradient(180deg, rgba(243, 178, 86, 0.08) 0%, #ffffff 100%);
+    --card-accent: var(--color-amber-base);
+    background: linear-gradient(180deg, var(--color-amber-soft) 0%, var(--white) 100%);
 }
 
 /* Modulo Verde Mela */
 .service-card.card-green {
-    --card-accent: var(--color-teal-base, #90b77d);
-    background: linear-gradient(180deg, rgba(144, 183, 125, 0.08) 0%, #ffffff 100%);
+    --card-accent: var(--color-teal-base);
+    background: linear-gradient(180deg, var(--color-teal-soft) 0%, var(--white) 100%);
 }
 
-/* Modulo Verde Salvia / Ottanio */
-.service-card.card-teal {
-    --card-accent: var(--color-teal, #6fa39d);
-    background: linear-gradient(180deg, rgba(111, 163, 157, 0.08) 0%, #ffffff 100%);
-}
+/*
+   Classe predisposta ma non utilizzata nell'HTML corrente.
+   Per riattivarla, rimuovere i commenti dal blocco seguente.
+
+   .service-card.card-teal {
+       --card-accent: var(--color-teal-base);
+       background: linear-gradient(180deg, var(--color-teal-soft) 0%, var(--white) 100%);
+   }
+*/
 
 /* Modulo Azzurro Polvere */
 .service-card.card-blue {
-    --card-accent: var(--color-blue-base,#2d4b6e);
-    background: linear-gradient(180deg, rgba(112, 146, 192, 0.08) 0%, #ffffff 100%);
+    --card-accent: var(--color-blue-base);
+    background: linear-gradient(180deg, var(--color-blue-soft) 0%, var(--white) 100%);
 }
 
-/* Modulo Grigio Ardesia (Neutra) */
-.service-card.card-grey {
-    --card-accent: var(--color-grey-base, #788896);
-    background: linear-gradient(180deg, rgba(120, 136, 150, 0.08) 0%, #ffffff 100%);
-}
+/*
+   Varianti predisposte ma non utilizzate nell'HTML corrente.
+   Per riattivarle, rimuovere i commenti dai blocchi seguenti.
 
-/* Modulo Bianco / Neutro */
-.service-card.card-white {
-    --card-accent: var(--text-dark, #2c3e50);
-    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
-    border: 1px solid rgba(44, 62, 80, 0.10); /* Bordo sottile di stacco strutturale */
-}
+   .service-card.card-grey {
+       --card-accent: var(--color-grey-base);
+       background: linear-gradient(180deg, var(--color-grey-soft) 0%, var(--white) 100%);
+   }
+
+   .service-card.card-white {
+       --card-accent: var(--text-dark);
+       background: linear-gradient(180deg, var(--white) 0%, var(--color-grey-light) 100%);
+       border: 1px solid var(--color-border-strong);
+   }
+*/
 
 
 /* --------------------------------------------------------------------------
@@ -168,14 +173,14 @@
 
 /* 1. Azzurro Avio (Luminoso) */
 .service-card.card-blue-light {
-    --card-accent: var(--color-blue-base2, #406694);
-    background: linear-gradient(180deg, rgba(91, 146, 229, 0.08) 0%, #ffffff 100%);
+    --card-accent: var(--color-blue-base2);
+    background: linear-gradient(180deg, var(--color-blue-light-soft) 0%, var(--white) 100%);
 }
 
 /* 3. Blu Cobalto / Desaturato (Profondo) */
 .service-card.card-blue-dark {
-    --card-accent: var(--color-blue-dark, #1b2f46);
-    background: linear-gradient(180deg, rgba(74, 111, 165, 0.08) 0%, #ffffff 100%);
+    --card-accent: var(--color-blue-dark);
+    background: linear-gradient(180deg, var(--color-blue-dark-soft) 0%, var(--white) 100%);
 }
 
 /* Ereditarietà dinamica del colore del titolo dalla variabile della card */

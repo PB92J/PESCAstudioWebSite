@@ -1,15 +1,15 @@
 /* ==========================================================================
-   SEZIONE HEADER E NAVIGAZIONE (STICKY NAVBAR)
+    SEZIONE HEADER E NAVIGAZIONE (STICKY NAVBAR)
    ========================================================================== */
 
-/* Contenitore fisso in alto: rimane visibile durante lo scorrimento della pagina */
+/* Contenitore sticky: segue lo scroll e rimane visibile nella parte alta della pagina. */
 .header {
     background-color: var(--white);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Ombra leggera di stacco dal contenuto sottostante */
+    box-shadow: 0 2px 10px var(--color-shadow-soft); /* Ombra leggera di stacco dal contenuto sottostante */
     width: 100%;
     position: sticky;
     top: 0;
-    z-index: 1000;                              /* Priorità di sovrapposizione massima */
+    z-index: 1000;                              /* Mantiene la barra sopra il contenuto durante lo scroll. */
 }
 
 /* Layout Flexbox orizzontale del contenitore interno */
@@ -22,7 +22,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   LOGO TESTUALE MULTI-COLORE (FREDOKA FONT)
+    LOGO TESTUALE MULTI-COLORE (GRANDSTANDER FONT)
    -------------------------------------------------------------------------- */
 
 /* Styling principale del contenitore logo */
@@ -40,7 +40,7 @@
 /* Override specifico per la componente "studio" */
 .logo-text .studio-color {
     font-family: var(--font-main);                    /* Eredita Montserrat definito nelle variabili */
-    font-weight: 501;                                 /* Peso Regular per bilanciare il contrasto con PeSCA */
+    font-weight: 700;                                 /* Peso Bold per bilanciare il contrasto con PeSCA */
     margin-left: 0.35rem;                             /* Distanziamento orizzontale relativo tra le due parti */
     font-size: 0.85em;                                /* Proporziona leggermente la dimensione rispetto a PeSCA */
 }
@@ -52,6 +52,7 @@
 
 .nav-menu ul {
     display: flex;                             /* Dispone le voci di menu in sequenza orizzontale */
+    flex-wrap: wrap;                           /* Permette al menu di adattarsi alle larghezze ridotte */
     list-style: none;                          /* Rimuove i punti elenco della lista <ul> */
     gap: 30px;                                 /* Spaziatura orizzontale costante tra i link */
     margin: 0;
@@ -63,25 +64,25 @@
     color: var(--text-dark);
     font-weight: 700;
     font-size: 1.1rem;
-    white-space: nowrap;                       /* Impedisce a "Percorsi e Trattamenti" di andare a capo */
+    white-space: normal;                       /* Permette la divisione naturale delle voci lunghe */
     transition: var(--transition);             /* Transizione fluida definita nelle variabili per l'effetto hover */
 }
 
-/* Assegnazione colore con riserva sul valore neutro di default */
+/* Tutte le voci usano il colore primario definito nei token globali. */
 .nav-menu a.nav-chisono {
-    color: var(--primary-color, #334155); /* Viola | Fallback: Testo scuro */
+    color: var(--primary-color); /* Voce "Chi Sono": colore primario. */
 }
 
 .nav-menu a.nav-percorsi {
-    color: var(--primary-color, #334155);  /* Verde | Fallback: Testo scuro */
+    color: var(--primary-color);  /* Voce "Percorsi": colore primario. */
 }
 
 .nav-menu a.nav-contatti {
-    color: var(--primary-color, #334155);   /* Azzurro | Fallback: Testo scuro */
+    color: var(--primary-color);   /* Voce "Contatti": colore primario. */
 }
 
 .nav-menu a:hover {
-    color: var(--color-coral-base);               /* Cambio colore al passaggio del mouse */
+    color: var(--accent-color);                   /* Hover: colore d'accento globale. */
 }
 
 
@@ -109,7 +110,7 @@
     .nav-menu ul {
         justify-content: center;
         align-items: center;
-        gap: 15px;                             /* Riduzione spaziatura per mantenere le voci su un'unica riga */
+        gap: 8px 15px;                         /* Spaziatura compatta tra righe e voci */
         width: 100%;
     }
 

@@ -11,11 +11,28 @@
     box-sizing: border-box;
 }
 
-/* Attiva lo scorrimento fluido e blocca l'overflow orizzontale a livello di radice */
+/* Attiva lo scorrimento fluido e ritaglia lo sbordamento senza creare un nuovo scroll container. */
 html {
     scroll-behavior: smooth;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
+}
+
+/* Evita che l'header sticky copra il titolo quando si raggiunge una sezione tramite ancora. */
+section[id] {
+    scroll-margin-top: 8rem;
+}
+
+/* Rende riconoscibile la navigazione da tastiera senza alterare il focus del mouse. */
+:where(a, button, input, select, textarea):focus-visible {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 3px;
+}
+
+/* Messaggio mostrato quando un modulo HTML non può essere caricato. */
+.include-error {
+    color: var(--color-coral-dark);
+    font-weight: 600;
 }
 
 /* Tipografia, sfondo e vincolo di larghezza per evitare autoscaling parassita */
@@ -28,7 +45,7 @@ body {
     max-width: 100%;
     min-height: 100vh;           /* Garantisce che il body copra almeno l'intero schermo senza bloccarlo */
     min-height: 100dvh;          /* Usa il Dynamic Viewport Height per gestire correttamente la barra browser mobile */
-    overflow-x: hidden;          /* Contiene eventuali sbordamenti orizzontali lasciando libero lo scroll Y */
+    overflow-x: clip;            /* Blocca lo sbordamento senza interferire con position: sticky */
     position: relative;          /* Previene comportamenti di stacking contestuale errati */
 }
 
@@ -49,5 +66,21 @@ body {
     .container {
         padding-left: 15px;
         padding-right: 15px;
+    }
+}
+
+/* Riduce transizioni e scorrimento animato quando richiesto dal sistema operativo. */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
     }
 }

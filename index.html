@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 
 <html lang="it">
@@ -10,42 +12,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Meta Description: testo di anteprima mostrato da Google nei risultati di ricerca sotto il titolo della pagina -->
-    <meta name="description" content="Dott.ssa Nadia Bandera - Psicologa, Analista del Comportamento e Supervisore ABA.">
+    <meta name="description" content="PeSCA studio - Dott.ssa Nadia Bandera, Psicologa, Analista del Comportamento e Supervisore ABA.">
     
     <!-- Titolo visibile nella scheda del browser e nei preferiti -->
-    <title>Studio PESCA | Dott.ssa Nadia Bandera - Analista del Comportamento ABA</title>
+    <title>PeSCA studio | Dott.ssa Nadia Bandera - Analista del Comportamento ABA</title>
 
     <!-- Collegamento al foglio di stile CSS globale -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icona mostrata nella scheda del browser e nei preferiti. -->
+    <link rel="icon" type="image/png" href="assets/Logo_PESCA.png">
 </head>
 
 <body>
 
-  <!-- Header modulare: include logo e barra di navigazione -->
-  <header class="header" data-include="_includes/header.html"></header>
+  <!-- Header modulare: Jekyll inserisce logo e barra di navigazione durante la build. -->
+  {% include header.html %}
 
     <!-- Contenitore principale dei contenuti di valore (tag semantico HTML5) -->
     <main>
 
       <!-- Modulo Hero: schermata principale di copertina -->
-      <div data-include="_includes/hero.html"></div>
+      {% include hero.html %}
       
       <!-- Modulo Chi Sono: presentazione biografica e credenziali professionali -->
-      <div data-include="_includes/chi-sono.html"></div>
+      {% include chi-sono.html %}
 
       <!-- Modulo Percorsi: servizi, trattamenti e interventi ABA -->
-      <div data-include="_includes/percorsi.html"></div>
+      {% include percorsi.html %}
 
       <!-- Modulo Contatti: form, mappa e dati dello studio -->
-      <div data-include="_includes/contatti.html"></div>
+      {% include contatti.html %}
 
     </main>
 
-  <!-- Footer modulare: copyright, note legali, P.IVA e contatti rapidi -->
-  <footer data-include="_includes/footer.html"></footer>
-    
-<!-- Loader JS: esegue la scansione degli attributi data-include per inserire i frammenti HTML -->
-  <script src="js/components.js"></script>
+  <!-- Footer modulare: Jekyll inserisce copyright, note legali, P.IVA e contatti rapidi. -->
+  {% include footer.html %}
 
 </body>
 </html>
