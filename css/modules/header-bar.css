@@ -63,7 +63,7 @@
 
 /* Styling principale del contenitore logo */
 .logo-text {
-    font-family: 'Grandstander', cursive, sans-serif; /* Font per il brand PeSCA */
+    font-family: 'Grandstander', sans-serif; /* Font per il brand PeSCA */
     font-size: 1.9rem;
     font-weight: 600;                                 /* Peso Medium per PeSCA */
     color: var(--text-dark);
@@ -106,15 +106,15 @@
 
 /* Tutte le voci usano il colore primario definito nei token globali. */
 .nav-menu a.nav-chisono {
-    color: var(--primary-color); /* Voce "Chi Sono": colore primario. */
+    color: var(--color-blue-base2); /* Voce "Chi Sono": colore primario. */
 }
 
 .nav-menu a.nav-percorsi {
-    color: var(--primary-color);  /* Voce "Percorsi": colore primario. */
+    color: var(--color-blue-base2);  /* Voce "Percorsi": colore primario. */
 }
 
 .nav-menu a.nav-contatti {
-    color: var(--primary-color);   /* Voce "Contatti": colore primario. */
+    color: var(--color-blue-base2);   /* Voce "Contatti": colore primario. */
 }
 
 .nav-menu a:hover {

@@ -15,12 +15,12 @@
     margin-bottom: 24px;
 }
 
+
 .hero-logo {
-    max-width: 680px;
+    max-width: 800px;
     width: 100%;
     height: auto;
     display: inline-block;
-    mix-blend-mode: multiply; /* Elimina visivamente lo sfondo bianco del PNG */
 }
 
 /* Divisore grafico di separazione */
@@ -29,7 +29,7 @@
     height: 2px;
     width: 60px;
     background-color: var(--color-blue-base2);
-    margin: 0 auto 32px auto;
+    margin: 24px auto 32px auto;
     border-radius: 2px;
     opacity: 0.6;
 }
@@ -57,14 +57,13 @@
     color: var(--color-blue-base2);
     font-weight: 600;
     line-height: 1.4;
-     margin: 0 auto;
+    margin: 0 auto;
     margin-bottom: 20px;
 }
 
 /* Paragrafo Descrizione Servizi */
 .doctor-description {
     font-family: var(--font-main, 'Montserrat', sans-serif);
-    font-size: 1rem;
     font-weight: 400;
     color: var(--text-dark);
     line-height: 1.6;

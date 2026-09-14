@@ -31,7 +31,54 @@
    --color-amber-light: #fcead2;       /* Ambra chiaro: avvisi, badge e superfici delicate. */
    --color-amber-base:  #f0a95a;       /* Ambra principale: titolo della card Comunicazione. */
    --color-amber-dark:  #b87322;       /* Ambra scuro: hover e accenti secondari. */
-    
+
+   /*NUOVI COLORI
+
+/* COLORE 1: BLU STUDIO / NAVY (#364E72) */
+    --color-blue-light: #e6edf4;         /* Blu chiaro: sfondi selezionati e superfici secondarie. */
+    --color-blue-base2: #4a6f9a;         /* Blu avio: footer, link, icone e card dei servizi. */
+    --color-blue-base:  #364E72;         /* Blu studio: titoli, header, testo della navigazione e accenti. */
+    --color-blue-dark:  #23354b;         /* Blu scuro: contrasti, card profonde e consulenza. */
+
+    /* COLORE 2: VERDE OTTANIO / DESATURATO (#6FA39D) */
+    --color-teal-light: #dbedea;         /* Teal chiaro: sfondi tenui e badge. */
+    --color-teal-base:  #6FA39D;         /* Teal principale: autonomia e attività sul territorio. */
+    --color-teal-dark:  #4b746f;         /* Teal scuro: eventuali hover e bordi. */
+
+    /* COLORE 3: CORALLO / SALMONE (#E88978) */
+    --color-coral-light: #fae3df;        /* Corallo chiaro: evidenziazioni e sfondi CTA. */
+    --color-coral-base:  #E88978;        /* Corallo principale: CTA, contatti, hover e titoli servizi. */
+    --color-coral-dark:  #b55a4b;        /* Corallo scuro: stato hover/pressione delle CTA. */
+
+    /* COLORE 4: VIOLA POLVERE / LILLA (#7D8DC6) */
+    --color-purple-light: #eceff8;       /* Viola chiaro: sfondi secondari. */
+    --color-purple-base:  #7D8DC6;       /* Viola principale: titolo della card Socialità. */
+    --color-purple-dark:  #58699f;       /* Viola scuro: dettagli tipografici ad alto contrasto. */
+
+    /* COLORE 5: AMBRA / GIALLO CALDO (#F3B255) */
+    --color-amber-light: #fdf4e7;        /* Ambra chiaro: avvisi, badge e superfici delicate. */
+    --color-amber-base:  #F3B255;        /* Ambra principale: titolo della card Comunicazione. */
+    --color-amber-dark:  #b87d21;        /* Ambra scuro: hover e accenti secondari. */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    /* ==========================================================================
        2. STRUTTURA NEUTRA E TIPOGRAFICA
        ========================================================================== */
@@ -114,7 +161,7 @@
    ========================================================================== */
 
 /* Colori puntuali per il logo e per le etichette delle aree di intervento. */
-.studio-color { color: var(--color-blue-base2); } /* Logo: parola "studio". */
+.studio-color { color: var(--color-blue-base); } /* Logo: parola "studio". */
 .p-color      { color: var(--color-coral-base); } /* Logo: lettera P. */
 .e-color      { color: var(--color-coral-base); } /* Logo: lettera e. */
 .s-color      { color: var(--color-purple-base); } /* Card: Socialità e logo S. */
