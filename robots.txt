@@ -1,0 +1,10 @@
+# ==========================================================================
+# ROBOTS.TXT - PescaStudio (pescastudio.it)
+# ==========================================================================
+
+# Regole generali per tutti i crawler web
+User-agent: *
+Allow: /
+
+# Percorso ufficiale della mappa del sito per l'indicizzazione
+Sitemap: https://www.pescastudio.it/sitemap.xml
