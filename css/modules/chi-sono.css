@@ -8,60 +8,72 @@
     background-color: var(--white);
 }
 
-/* Layout Flexbox orizzontale a due colonne: foto a sinistra, testo a destra */
-.about-container {
-    display: flex;
-    align-items: center;        /* Allineamento verticale centrato sui baricentri delle due colonne */
-    gap: 50px;                  /* Distanza orizzontale di stacco tra immagine e blocco testo */
-}
-
 /* --------------------------------------------------------------------------
-   COLONNA IMMAGINE PROFESSIONALE
+   LAYOUT DESKTOP (> 768px): CSS GRID A 2 COLONNE
    -------------------------------------------------------------------------- */
 
+.about-container {
+    display: grid;
+    grid-template-columns: 380px 1fr; /* Foto 380px fissa, colonna testo fluida */
+    grid-template-areas:
+        "image intro"
+        "image details";
+    gap: 8px 48px;                     /* Gap verticale tra intro e dettagli, 48px orizzontale */
+    align-items: start;
+}
+
+/* Mappatura delle aree di montaggio su Desktop */
 .about-image-wrapper {
-    flex: 1;                    /* Assegna 1 quota dello spazio Flex orizzontale */
-    max-width: 380px;           /* Limite massimo di ingombro orizzontale su Desktop */
+    grid-area: image;
+    width: 100%;
+    max-width: 380px;
+    align-self: center;               /* Centra verticalmente l'immagine rispetto all'altezza totale del testo */
 }
 
 .about-image {
     width: 100%;
     height: auto;
-    border-radius: 16px;        /* Raggio di curvatura angoli coerente con la UI del sito */
-    box-shadow: 0 10px 25px var(--color-shadow-image); /* Ombra morbida di profondità */
+    border-radius: 16px;
+    box-shadow: 0 10px 25px var(--color-shadow-image);
     display: block;
-    object-fit: cover;          /* Preserva le proporzioni del ritratto evitando distorsioni */
+    object-fit: cover;
+}
+
+.about-intro {
+    grid-area: intro;
+}
+
+.about-details {
+    grid-area: details;
 }
 
 /* --------------------------------------------------------------------------
    COLONNA TESTO E PUNTI DI FORZA
    -------------------------------------------------------------------------- */
 
-.about-text {
-    flex: 1.5;                  /* Assegna 1.5 quote dello spazio (50% più larga rispetto alla foto) */
-}
 
-.about-text h2 {
+
+.about-intro h2 {
     font-size: 2.2rem;
-    color: var(--primary-color);
+    color: var(--color-blue-base);
     margin-bottom: 5px;
     font-weight: 700;
 }
 
-.about-text .subtitle {
+.about-intro .subtitle {
     font-size: 1.15rem;
     color: var(--color-blue-base2);
     font-weight: 700;
     margin-bottom: 25px;
 }
 
-.about-text p {
+.about-intro p,
+.about-details p {
     margin-bottom: 18px;
     color: var(--text-dark);
 }
 
-
-/* 2. Selettori di classe specifici: sovrascrivono il colore SOLO per questi due blocchi */
+/* Selettori di classe specifici: sovrascrivono il colore SOLO per questi due blocchi */
 .about-qualifications h3 {
     font-family: var(--font-main);
     font-weight: 700;
@@ -71,13 +83,12 @@
 }
 
 .about-field-experience h3 {
-        font-family: var(--font-main);
+    font-family: var(--font-main);
     font-weight: 700;
     color: var(--color-blue-base); /* Blu Studio primario per la norma */
     margin-top: 0;
     margin-bottom: 1rem;
 }
-
 
 
 /* ==========================================================================
@@ -155,15 +166,32 @@
 
 @media (max-width: 768px) {
 
-    /* Conversione del layout da orizzontale (2 colonne) a verticale (stack singolo) */
+    /* Conversione da Grid a Flexbox verticale */
     .about-container {
+        display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 20px;
     }
 
-    /* Riduzione e centratura della foto per la vista smartphone */
+    /* Centratura mirrorata SOLO per le intestazioni H2 ed H3 */
+    .about-intro h2{
+        text-align: center;
+    }
+
+    /* Posizione 1: Blocco Introduzione (Testo e sottotitolo restano a sinistra) */
+    .about-intro {
+        order: 1;
+    }
+
+/* Posizione 2: Foto professionale centrata con spaziatura inferiore dedicata */
     .about-image-wrapper {
-        max-width: 260px;
-        margin: 0 auto;
+        order: 2;
+        max-width: 280px;
+        margin: 0 auto 15px auto;      /* Aggiunti 15px di margine inferiore (spazio totale foto -> dettagli: 20px gap + 15px margin = 35px) */
+    }
+
+    /* Posizione 3: Blocco Dettagli (Qualifiche ed Esperienza restano a sinistra) */
+    .about-details {
+        order: 3;
     }
 }
